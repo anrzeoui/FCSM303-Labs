@@ -1,0 +1,17 @@
+test_astar_avoids_short_trap (test_lab2.Lab2Tests.test_astar_avoids_short_trap) ... ok
+test_bfs_key_then_exit (test_lab2.Lab2Tests.test_bfs_key_then_exit) ... ok
+test_bonus_and_trap_scoring (test_lab2.Lab2Tests.test_bonus_and_trap_scoring) ... ok
+test_bounds_walls_and_locked_exit (test_lab2.Lab2Tests.test_bounds_walls_and_locked_exit) ... ok
+test_coin_only_once_and_state_fields (test_lab2.Lab2Tests.test_coin_only_once_and_state_fields) ... ok
+test_goal_switch_and_retraction (test_lab2.Lab2Tests.test_goal_switch_and_retraction) ... ok
+test_manhattan_consistency (test_lab2.Lab2Tests.test_manhattan_consistency) ... ok
+test_minimum_board_and_bad_size (test_lab2.Lab2Tests.test_minimum_board_and_bad_size) ... ok
+test_seed_reproducibility_and_comparison (test_lab2.Lab2Tests.test_seed_reproducibility_and_comparison) ... ok
+test_unknown_not_leaked_to_planner (test_lab2.Lab2Tests.test_unknown_not_leaked_to_planner) ... ok
+test_unknown_revealed_then_chained (test_lab2.Lab2Tests.test_unknown_revealed_then_chained) ... ok
+test_unreachable_search_failure (test_lab2.Lab2Tests.test_unreachable_search_failure) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.104s
+
+OK

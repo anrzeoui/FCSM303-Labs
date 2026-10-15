@@ -1,0 +1,3 @@
+algorithm,path_length,expanded_nodes,total_path_cost,search_seconds,execution_seconds,goal_reached,score,coins,traps,unique_cells,searches,status
+BFS,10,120,17,0.0021534930037887534,0.013710319999518106,True,103,1,1,9,10,REACHED
+A*,12,74,12,0.0010613819995342055,0.011002598999766633,True,108,2,0,11,12,REACHED
