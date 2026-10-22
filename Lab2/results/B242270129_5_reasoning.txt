@@ -27,7 +27,7 @@ R6: ('Coin', (4, 3)) -> ('PositiveUtility', (4, 3))
 R7: ('Bonus', (1, 4)) -> ('PositiveUtility', (1, 4))
 R5: ('Dangerous', (0, 3)) -> ('Avoid', (0, 3))
 GOAL=Key (2, 0)
-SEARCH=BFS, found=True, expanded=13, planned_cost=4, search_seconds=0.000255706
+SEARCH=BFS, found=True, expanded=13, planned_cost=4, search_seconds=0.000211349
 PLAN=[(0, 2), (1, 2), (2, 2), (2, 1), (2, 0)]
 ACTION=DOWN
 REASON=Хамгийн цөөн алхамтай замын эхний үйлдэл.
@@ -53,7 +53,7 @@ R6: ('Coin', (4, 3)) -> ('PositiveUtility', (4, 3))
 R7: ('Bonus', (1, 4)) -> ('PositiveUtility', (1, 4))
 R5: ('Dangerous', (0, 3)) -> ('Avoid', (0, 3))
 GOAL=Key (2, 0)
-SEARCH=BFS, found=True, expanded=13, planned_cost=3, search_seconds=0.000213039
+SEARCH=BFS, found=True, expanded=13, planned_cost=3, search_seconds=0.000195488
 PLAN=[(1, 2), (2, 2), (2, 1), (2, 0)]
 ACTION=DOWN
 REASON=Хамгийн цөөн алхамтай замын эхний үйлдэл.
@@ -79,7 +79,7 @@ R6: ('Coin', (4, 3)) -> ('PositiveUtility', (4, 3))
 R7: ('Bonus', (1, 4)) -> ('PositiveUtility', (1, 4))
 R5: ('Dangerous', (0, 3)) -> ('Avoid', (0, 3))
 GOAL=Key (2, 0)
-SEARCH=BFS, found=True, expanded=8, planned_cost=2, search_seconds=0.000135226
+SEARCH=BFS, found=True, expanded=8, planned_cost=2, search_seconds=0.000135794
 PLAN=[(2, 2), (2, 1), (2, 0)]
 ACTION=LEFT
 REASON=Хамгийн цөөн алхамтай замын эхний үйлдэл.
@@ -105,7 +105,7 @@ R6: ('Coin', (4, 3)) -> ('PositiveUtility', (4, 3))
 R7: ('Bonus', (1, 4)) -> ('PositiveUtility', (1, 4))
 R5: ('Dangerous', (0, 3)) -> ('Avoid', (0, 3))
 GOAL=Key (2, 0)
-SEARCH=BFS, found=True, expanded=3, planned_cost=1, search_seconds=0.000072536
+SEARCH=BFS, found=True, expanded=3, planned_cost=1, search_seconds=0.000061935
 PLAN=[(2, 1), (2, 0)]
 ACTION=LEFT
 REASON=Хамгийн цөөн алхамтай замын эхний үйлдэл.
@@ -131,7 +131,7 @@ R6: ('Coin', (4, 3)) -> ('PositiveUtility', (4, 3))
 R7: ('Bonus', (1, 4)) -> ('PositiveUtility', (1, 4))
 R5: ('Dangerous', (0, 3)) -> ('Avoid', (0, 3))
 GOAL=Exit (0, 4)
-SEARCH=BFS, found=True, expanded=17, planned_cost=13, search_seconds=0.000228156
+SEARCH=BFS, found=True, expanded=17, planned_cost=13, search_seconds=0.000226105
 PLAN=[(2, 0), (1, 0), (0, 0), (0, 1), (0, 2), (0, 3), (0, 4)]
 ACTION=UP
 REASON=Хамгийн цөөн алхамтай замын эхний үйлдэл.
@@ -157,7 +157,7 @@ R6: ('Coin', (4, 3)) -> ('PositiveUtility', (4, 3))
 R7: ('Bonus', (1, 4)) -> ('PositiveUtility', (1, 4))
 R5: ('Dangerous', (0, 3)) -> ('Avoid', (0, 3))
 GOAL=Exit (0, 4)
-SEARCH=BFS, found=True, expanded=17, planned_cost=12, search_seconds=0.000228521
+SEARCH=BFS, found=True, expanded=17, planned_cost=12, search_seconds=0.000230613
 PLAN=[(1, 0), (0, 0), (0, 1), (0, 2), (0, 3), (0, 4)]
 ACTION=UP
 REASON=Хамгийн цөөн алхамтай замын эхний үйлдэл.
@@ -183,7 +183,7 @@ R6: ('Coin', (4, 3)) -> ('PositiveUtility', (4, 3))
 R7: ('Bonus', (1, 4)) -> ('PositiveUtility', (1, 4))
 R5: ('Dangerous', (0, 3)) -> ('Avoid', (0, 3))
 GOAL=Exit (0, 4)
-SEARCH=BFS, found=True, expanded=14, planned_cost=11, search_seconds=0.000190446
+SEARCH=BFS, found=True, expanded=14, planned_cost=11, search_seconds=0.000191337
 PLAN=[(0, 0), (0, 1), (0, 2), (0, 3), (0, 4)]
 ACTION=RIGHT
 REASON=Хамгийн цөөн алхамтай замын эхний үйлдэл.
@@ -209,7 +209,7 @@ R6: ('Coin', (4, 3)) -> ('PositiveUtility', (4, 3))
 R7: ('Bonus', (1, 4)) -> ('PositiveUtility', (1, 4))
 R5: ('Dangerous', (0, 3)) -> ('Avoid', (0, 3))
 GOAL=Exit (0, 4)
-SEARCH=BFS, found=True, expanded=12, planned_cost=10, search_seconds=0.000170754
+SEARCH=BFS, found=True, expanded=12, planned_cost=10, search_seconds=0.000161584
 PLAN=[(0, 1), (0, 2), (0, 3), (0, 4)]
 ACTION=RIGHT
 REASON=Хамгийн цөөн алхамтай замын эхний үйлдэл.
@@ -235,7 +235,7 @@ R6: ('Coin', (4, 3)) -> ('PositiveUtility', (4, 3))
 R7: ('Bonus', (1, 4)) -> ('PositiveUtility', (1, 4))
 R5: ('Dangerous', (0, 3)) -> ('Avoid', (0, 3))
 GOAL=Exit (0, 4)
-SEARCH=BFS, found=True, expanded=8, planned_cost=9, search_seconds=0.000114779
+SEARCH=BFS, found=True, expanded=8, planned_cost=9, search_seconds=0.000104582
 PLAN=[(0, 2), (0, 3), (0, 4)]
 ACTION=RIGHT
 REASON=Хамгийн цөөн алхамтай замын эхний үйлдэл.
@@ -261,7 +261,7 @@ R6: ('Coin', (4, 3)) -> ('PositiveUtility', (4, 3))
 R7: ('Bonus', (1, 4)) -> ('PositiveUtility', (1, 4))
 R5: ('Dangerous', (0, 3)) -> ('Avoid', (0, 3))
 GOAL=Exit (0, 4)
-SEARCH=BFS, found=True, expanded=3, planned_cost=1, search_seconds=0.000051441
+SEARCH=BFS, found=True, expanded=3, planned_cost=1, search_seconds=0.000047125
 PLAN=[(0, 3), (0, 4)]
 ACTION=RIGHT
 REASON=Хамгийн цөөн алхамтай замын эхний үйлдэл.
@@ -281,7 +281,7 @@ R6: ('Coin', (1, 1)) -> ('PositiveUtility', (1, 1))
 R6: ('Coin', (4, 3)) -> ('PositiveUtility', (4, 3))
 R7: ('Bonus', (1, 4)) -> ('PositiveUtility', (1, 4))
 R5: ('Dangerous', (0, 3)) -> ('Avoid', (0, 3))
-RESULT={"algorithm": "BFS", "path_length": 10, "expanded_nodes": 108, "total_path_cost": 17, "search_seconds": 0.00166060399988055, "execution_seconds": 0.012323916999775975, "goal_reached": true, "score": 75, "coins": 0, "traps": 1, "unique_cells": 10, "searches": 10, "status": "REACHED"}
+RESULT={"algorithm": "BFS", "path_length": 10, "expanded_nodes": 108, "total_path_cost": 17, "search_seconds": 0.0015659120001600968, "execution_seconds": 0.010899464999965858, "goal_reached": true, "score": 75, "coins": 0, "traps": 1, "unique_cells": 10, "searches": 10, "status": "REACHED"}
 
 ALGORITHM=A*
 INITIAL BOARD
@@ -309,7 +309,7 @@ R6: ('Coin', (4, 3)) -> ('PositiveUtility', (4, 3))
 R7: ('Bonus', (1, 4)) -> ('PositiveUtility', (1, 4))
 R5: ('Dangerous', (0, 3)) -> ('Avoid', (0, 3))
 GOAL=Key (2, 0)
-SEARCH=A*, found=True, expanded=8, planned_cost=4, search_seconds=0.000163027
+SEARCH=A*, found=True, expanded=8, planned_cost=4, search_seconds=0.000141954
 PLAN=[(0, 2), (1, 2), (2, 2), (2, 1), (2, 0)]
 ACTION=DOWN
 REASON=Мэдэгдэж буй эрсдэлийн өртөг хамгийн бага замын эхний үйлдэл.
@@ -335,7 +335,7 @@ R6: ('Coin', (4, 3)) -> ('PositiveUtility', (4, 3))
 R7: ('Bonus', (1, 4)) -> ('PositiveUtility', (1, 4))
 R5: ('Dangerous', (0, 3)) -> ('Avoid', (0, 3))
 GOAL=Key (2, 0)
-SEARCH=A*, found=True, expanded=5, planned_cost=3, search_seconds=0.000098582
+SEARCH=A*, found=True, expanded=5, planned_cost=3, search_seconds=0.000091617
 PLAN=[(1, 2), (2, 2), (2, 1), (2, 0)]
 ACTION=DOWN
 REASON=Мэдэгдэж буй эрсдэлийн өртөг хамгийн бага замын эхний үйлдэл.
@@ -361,7 +361,7 @@ R6: ('Coin', (4, 3)) -> ('PositiveUtility', (4, 3))
 R7: ('Bonus', (1, 4)) -> ('PositiveUtility', (1, 4))
 R5: ('Dangerous', (0, 3)) -> ('Avoid', (0, 3))
 GOAL=Key (2, 0)
-SEARCH=A*, found=True, expanded=2, planned_cost=2, search_seconds=0.000046460
+SEARCH=A*, found=True, expanded=2, planned_cost=2, search_seconds=0.000045075
 PLAN=[(2, 2), (2, 1), (2, 0)]
 ACTION=LEFT
 REASON=Мэдэгдэж буй эрсдэлийн өртөг хамгийн бага замын эхний үйлдэл.
@@ -387,7 +387,7 @@ R6: ('Coin', (4, 3)) -> ('PositiveUtility', (4, 3))
 R7: ('Bonus', (1, 4)) -> ('PositiveUtility', (1, 4))
 R5: ('Dangerous', (0, 3)) -> ('Avoid', (0, 3))
 GOAL=Key (2, 0)
-SEARCH=A*, found=True, expanded=1, planned_cost=1, search_seconds=0.000029176
+SEARCH=A*, found=True, expanded=1, planned_cost=1, search_seconds=0.000027917
 PLAN=[(2, 1), (2, 0)]
 ACTION=LEFT
 REASON=Мэдэгдэж буй эрсдэлийн өртөг хамгийн бага замын эхний үйлдэл.
@@ -413,7 +413,7 @@ R6: ('Coin', (4, 3)) -> ('PositiveUtility', (4, 3))
 R7: ('Bonus', (1, 4)) -> ('PositiveUtility', (1, 4))
 R5: ('Dangerous', (0, 3)) -> ('Avoid', (0, 3))
 GOAL=Exit (0, 4)
-SEARCH=A*, found=True, expanded=11, planned_cost=6, search_seconds=0.000163918
+SEARCH=A*, found=True, expanded=11, planned_cost=6, search_seconds=0.000166093
 PLAN=[(2, 0), (1, 0), (1, 1), (1, 2), (1, 3), (1, 4), (0, 4)]
 ACTION=UP
 REASON=Мэдэгдэж буй эрсдэлийн өртөг хамгийн бага замын эхний үйлдэл.
@@ -439,7 +439,7 @@ R6: ('Coin', (4, 3)) -> ('PositiveUtility', (4, 3))
 R7: ('Bonus', (1, 4)) -> ('PositiveUtility', (1, 4))
 R5: ('Dangerous', (0, 3)) -> ('Avoid', (0, 3))
 GOAL=Exit (0, 4)
-SEARCH=A*, found=True, expanded=8, planned_cost=5, search_seconds=0.000130510
+SEARCH=A*, found=True, expanded=8, planned_cost=5, search_seconds=0.000123103
 PLAN=[(1, 0), (1, 1), (1, 2), (1, 3), (1, 4), (0, 4)]
 ACTION=RIGHT
 REASON=Мэдэгдэж буй эрсдэлийн өртөг хамгийн бага замын эхний үйлдэл.
@@ -464,7 +464,7 @@ R6: ('Coin', (4, 3)) -> ('PositiveUtility', (4, 3))
 R7: ('Bonus', (1, 4)) -> ('PositiveUtility', (1, 4))
 R5: ('Dangerous', (0, 3)) -> ('Avoid', (0, 3))
 GOAL=Exit (0, 4)
-SEARCH=A*, found=True, expanded=6, planned_cost=4, search_seconds=0.000095767
+SEARCH=A*, found=True, expanded=6, planned_cost=4, search_seconds=0.000104461
 PLAN=[(1, 1), (1, 2), (1, 3), (1, 4), (0, 4)]
 ACTION=RIGHT
 REASON=Мэдэгдэж буй эрсдэлийн өртөг хамгийн бага замын эхний үйлдэл.
@@ -489,7 +489,7 @@ R6: ('Coin', (4, 3)) -> ('PositiveUtility', (4, 3))
 R7: ('Bonus', (1, 4)) -> ('PositiveUtility', (1, 4))
 R5: ('Dangerous', (0, 3)) -> ('Avoid', (0, 3))
 GOAL=Exit (0, 4)
-SEARCH=A*, found=True, expanded=4, planned_cost=3, search_seconds=0.000066863
+SEARCH=A*, found=True, expanded=4, planned_cost=3, search_seconds=0.000071236
 PLAN=[(1, 2), (1, 3), (1, 4), (0, 4)]
 ACTION=RIGHT
 REASON=Мэдэгдэж буй эрсдэлийн өртөг хамгийн бага замын эхний үйлдэл.
@@ -514,7 +514,7 @@ R6: ('Coin', (4, 3)) -> ('PositiveUtility', (4, 3))
 R7: ('Bonus', (1, 4)) -> ('PositiveUtility', (1, 4))
 R5: ('Dangerous', (0, 3)) -> ('Avoid', (0, 3))
 GOAL=Exit (0, 4)
-SEARCH=A*, found=True, expanded=2, planned_cost=2, search_seconds=0.000041099
+SEARCH=A*, found=True, expanded=2, planned_cost=2, search_seconds=0.000042902
 PLAN=[(1, 3), (1, 4), (0, 4)]
 ACTION=RIGHT
 REASON=Мэдэгдэж буй эрсдэлийн өртөг хамгийн бага замын эхний үйлдэл.
@@ -538,7 +538,7 @@ R4: ('Trap', (0, 3)) -> ('Dangerous', (0, 3))
 R6: ('Coin', (4, 3)) -> ('PositiveUtility', (4, 3))
 R5: ('Dangerous', (0, 3)) -> ('Avoid', (0, 3))
 GOAL=Exit (0, 4)
-SEARCH=A*, found=True, expanded=1, planned_cost=1, search_seconds=0.000026090
+SEARCH=A*, found=True, expanded=1, planned_cost=1, search_seconds=0.000029880
 PLAN=[(1, 4), (0, 4)]
 ACTION=UP
 REASON=Мэдэгдэж буй эрсдэлийн өртөг хамгийн бага замын эхний үйлдэл.
@@ -556,4 +556,4 @@ R3: ('Wall', (4, 4)) -> ('NotTraversable', (4, 4))
 R4: ('Trap', (0, 3)) -> ('Dangerous', (0, 3))
 R6: ('Coin', (4, 3)) -> ('PositiveUtility', (4, 3))
 R5: ('Dangerous', (0, 3)) -> ('Avoid', (0, 3))
-RESULT={"algorithm": "A*", "path_length": 10, "expanded_nodes": 48, "total_path_cost": 10, "search_seconds": 0.0008614919997853576, "execution_seconds": 0.010039110999969125, "goal_reached": true, "score": 109, "coins": 1, "traps": 0, "unique_cells": 10, "searches": 10, "status": "REACHED"}
+RESULT={"algorithm": "A*", "path_length": 10, "expanded_nodes": 48, "total_path_cost": 10, "search_seconds": 0.0008442380001270067, "execution_seconds": 0.009879273000024114, "goal_reached": true, "score": 109, "coins": 1, "traps": 0, "unique_cells": 10, "searches": 10, "status": "REACHED"}

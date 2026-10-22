@@ -1,598 +1,492 @@
 STUDENT=B242270129
 SEED=1
-SIZE=5x5
+SIZE=6x6
 ALGORITHM=BFS
 INITIAL BOARD
-. . . . .
-W . . . C
-A C . W .
-. W T . .
-K ? W B E
+. C E . . C
+. . . T W W
+. . . . . W
+C B . . K W
+. . . W . .
+? . T W A .
 
 STEP 1
-PERCEPT state=State(position=(2, 0), has_key=False, score=100, collected_coins=frozenset(), visited_cells=frozenset({(2, 0)}), consumed=frozenset())
-Visible=[((0, 0), '.'), ((0, 1), '.'), ((0, 2), '.'), ((0, 3), '.'), ((0, 4), '.'), ((1, 0), 'W'), ((1, 1), '.'), ((1, 2), '.'), ((1, 3), '.'), ((1, 4), 'C'), ((2, 0), '.'), ((2, 1), 'C'), ((2, 2), '.'), ((2, 3), 'W'), ((2, 4), '.'), ((3, 0), '.'), ((3, 1), 'W'), ((3, 2), 'T'), ((3, 3), '.'), ((3, 4), '.'), ((4, 0), 'K'), ((4, 1), '?'), ((4, 2), 'W'), ((4, 3), 'B'), ((4, 4), 'E')]
+PERCEPT state=State(position=(5, 4), has_key=False, score=100, collected_coins=frozenset(), visited_cells=frozenset({(5, 4)}), consumed=frozenset())
+Visible=[((0, 0), '.'), ((0, 1), 'C'), ((0, 2), 'E'), ((0, 3), '.'), ((0, 4), '.'), ((0, 5), 'C'), ((1, 0), '.'), ((1, 1), '.'), ((1, 2), '.'), ((1, 3), 'T'), ((1, 4), 'W'), ((1, 5), 'W'), ((2, 0), '.'), ((2, 1), '.'), ((2, 2), '.'), ((2, 3), '.'), ((2, 4), '.'), ((2, 5), 'W'), ((3, 0), 'C'), ((3, 1), 'B'), ((3, 2), '.'), ((3, 3), '.'), ((3, 4), 'K'), ((3, 5), 'W'), ((4, 0), '.'), ((4, 1), '.'), ((4, 2), '.'), ((4, 3), 'W'), ((4, 4), '.'), ((4, 5), '.'), ((5, 0), '?'), ((5, 1), '.'), ((5, 2), 'T'), ((5, 3), 'W'), ((5, 4), '.'), ((5, 5), '.')]
 Observation=None
-NEW FACTS=[('At', (2, 0)), ('Bonus', (4, 3)), ('Coin', (1, 4)), ('Coin', (2, 1)), ('Empty', (0, 0)), ('Empty', (0, 1)), ('Empty', (0, 2)), ('Empty', (0, 3)), ('Empty', (0, 4)), ('Empty', (1, 1)), ('Empty', (1, 2)), ('Empty', (1, 3)), ('Empty', (2, 0)), ('Empty', (2, 2)), ('Empty', (2, 4)), ('Empty', (3, 0)), ('Empty', (3, 3)), ('Empty', (3, 4)), ('Exit', (4, 4)), ('HasKey', False), ('Key', (4, 0)), ('Trap', (3, 2)), ('Unknown', (4, 1)), ('Visited', (2, 0)), ('Wall', (1, 0)), ('Wall', (2, 3)), ('Wall', (3, 1)), ('Wall', (4, 2))]
+NEW FACTS=[('At', (5, 4)), ('Bonus', (3, 1)), ('Coin', (0, 1)), ('Coin', (0, 5)), ('Coin', (3, 0)), ('Empty', (0, 0)), ('Empty', (0, 3)), ('Empty', (0, 4)), ('Empty', (1, 0)), ('Empty', (1, 1)), ('Empty', (1, 2)), ('Empty', (2, 0)), ('Empty', (2, 1)), ('Empty', (2, 2)), ('Empty', (2, 3)), ('Empty', (2, 4)), ('Empty', (3, 2)), ('Empty', (3, 3)), ('Empty', (4, 0)), ('Empty', (4, 1)), ('Empty', (4, 2)), ('Empty', (4, 4)), ('Empty', (4, 5)), ('Empty', (5, 1)), ('Empty', (5, 4)), ('Empty', (5, 5)), ('Exit', (0, 2)), ('HasKey', False), ('Key', (3, 4)), ('Trap', (1, 3)), ('Trap', (5, 2)), ('Unknown', (5, 0)), ('Visited', (5, 4)), ('Wall', (1, 4)), ('Wall', (1, 5)), ('Wall', (2, 5)), ('Wall', (3, 5)), ('Wall', (4, 3)), ('Wall', (5, 3))]
 RETRACTED FACTS=[]
 INFERENCE
 R1: ('HasKey', False) -> ('Goal', 'Key')
-R3: ('Wall', (1, 0)) -> ('NotTraversable', (1, 0))
-R3: ('Wall', (2, 3)) -> ('NotTraversable', (2, 3))
-R3: ('Wall', (3, 1)) -> ('NotTraversable', (3, 1))
-R3: ('Wall', (4, 2)) -> ('NotTraversable', (4, 2))
-R4: ('Trap', (3, 2)) -> ('Dangerous', (3, 2))
-R6: ('Coin', (1, 4)) -> ('PositiveUtility', (1, 4))
-R6: ('Coin', (2, 1)) -> ('PositiveUtility', (2, 1))
-R7: ('Bonus', (4, 3)) -> ('PositiveUtility', (4, 3))
-R5: ('Dangerous', (3, 2)) -> ('Avoid', (3, 2))
-GOAL=Key (4, 0)
-SEARCH=BFS, found=True, expanded=3, planned_cost=2, search_seconds=0.000101413
-PLAN=[(2, 0), (3, 0), (4, 0)]
-ACTION=DOWN
+R3: ('Wall', (1, 4)) -> ('NotTraversable', (1, 4))
+R3: ('Wall', (1, 5)) -> ('NotTraversable', (1, 5))
+R3: ('Wall', (2, 5)) -> ('NotTraversable', (2, 5))
+R3: ('Wall', (3, 5)) -> ('NotTraversable', (3, 5))
+R3: ('Wall', (4, 3)) -> ('NotTraversable', (4, 3))
+R3: ('Wall', (5, 3)) -> ('NotTraversable', (5, 3))
+R4: ('Trap', (1, 3)) -> ('Dangerous', (1, 3))
+R4: ('Trap', (5, 2)) -> ('Dangerous', (5, 2))
+R6: ('Coin', (0, 1)) -> ('PositiveUtility', (0, 1))
+R6: ('Coin', (0, 5)) -> ('PositiveUtility', (0, 5))
+R6: ('Coin', (3, 0)) -> ('PositiveUtility', (3, 0))
+R7: ('Bonus', (3, 1)) -> ('PositiveUtility', (3, 1))
+R5: ('Dangerous', (1, 3)) -> ('Avoid', (1, 3))
+R5: ('Dangerous', (5, 2)) -> ('Avoid', (5, 2))
+GOAL=Key (3, 4)
+SEARCH=BFS, found=True, expanded=3, planned_cost=2, search_seconds=0.000040979
+PLAN=[(5, 4), (4, 4), (3, 4)]
+ACTION=UP
 REASON=Хамгийн цөөн алхамтай замын эхний үйлдэл.
-AFTER ACTION=State(position=(3, 0), has_key=False, score=99, collected_coins=frozenset(), visited_cells=frozenset({(2, 0), (3, 0)}), consumed=frozenset())
-OBSERVED=((3, 0), '.')
+AFTER ACTION=State(position=(4, 4), has_key=False, score=99, collected_coins=frozenset(), visited_cells=frozenset({(4, 4), (5, 4)}), consumed=frozenset())
+OBSERVED=((4, 4), '.')
 ACTUAL COST=1
 
 STEP 2
-PERCEPT state=State(position=(3, 0), has_key=False, score=99, collected_coins=frozenset(), visited_cells=frozenset({(2, 0), (3, 0)}), consumed=frozenset())
-Visible=[((0, 0), '.'), ((0, 1), '.'), ((0, 2), '.'), ((0, 3), '.'), ((0, 4), '.'), ((1, 0), 'W'), ((1, 1), '.'), ((1, 2), '.'), ((1, 3), '.'), ((1, 4), 'C'), ((2, 0), '.'), ((2, 1), 'C'), ((2, 2), '.'), ((2, 3), 'W'), ((2, 4), '.'), ((3, 0), '.'), ((3, 1), 'W'), ((3, 2), 'T'), ((3, 3), '.'), ((3, 4), '.'), ((4, 0), 'K'), ((4, 1), '?'), ((4, 2), 'W'), ((4, 3), 'B'), ((4, 4), 'E')]
-Observation=((3, 0), '.')
-NEW FACTS=[('At', (3, 0)), ('ObservedEmpty', (3, 0)), ('Visited', (3, 0))]
-RETRACTED FACTS=[('At', (2, 0)), ('Avoid', (3, 2)), ('Dangerous', (3, 2)), ('Goal', 'Key'), ('NotTraversable', (1, 0)), ('NotTraversable', (2, 3)), ('NotTraversable', (3, 1)), ('NotTraversable', (4, 2)), ('PositiveUtility', (1, 4)), ('PositiveUtility', (2, 1)), ('PositiveUtility', (4, 3))]
+PERCEPT state=State(position=(4, 4), has_key=False, score=99, collected_coins=frozenset(), visited_cells=frozenset({(4, 4), (5, 4)}), consumed=frozenset())
+Visible=[((0, 0), '.'), ((0, 1), 'C'), ((0, 2), 'E'), ((0, 3), '.'), ((0, 4), '.'), ((0, 5), 'C'), ((1, 0), '.'), ((1, 1), '.'), ((1, 2), '.'), ((1, 3), 'T'), ((1, 4), 'W'), ((1, 5), 'W'), ((2, 0), '.'), ((2, 1), '.'), ((2, 2), '.'), ((2, 3), '.'), ((2, 4), '.'), ((2, 5), 'W'), ((3, 0), 'C'), ((3, 1), 'B'), ((3, 2), '.'), ((3, 3), '.'), ((3, 4), 'K'), ((3, 5), 'W'), ((4, 0), '.'), ((4, 1), '.'), ((4, 2), '.'), ((4, 3), 'W'), ((4, 4), '.'), ((4, 5), '.'), ((5, 0), '?'), ((5, 1), '.'), ((5, 2), 'T'), ((5, 3), 'W'), ((5, 4), '.'), ((5, 5), '.')]
+Observation=((4, 4), '.')
+NEW FACTS=[('At', (4, 4)), ('ObservedEmpty', (4, 4)), ('Visited', (4, 4))]
+RETRACTED FACTS=[('At', (5, 4)), ('Avoid', (1, 3)), ('Avoid', (5, 2)), ('Dangerous', (1, 3)), ('Dangerous', (5, 2)), ('Goal', 'Key'), ('NotTraversable', (1, 4)), ('NotTraversable', (1, 5)), ('NotTraversable', (2, 5)), ('NotTraversable', (3, 5)), ('NotTraversable', (4, 3)), ('NotTraversable', (5, 3)), ('PositiveUtility', (0, 1)), ('PositiveUtility', (0, 5)), ('PositiveUtility', (3, 0)), ('PositiveUtility', (3, 1))]
 INFERENCE
 R1: ('HasKey', False) -> ('Goal', 'Key')
-R3: ('Wall', (1, 0)) -> ('NotTraversable', (1, 0))
-R3: ('Wall', (2, 3)) -> ('NotTraversable', (2, 3))
-R3: ('Wall', (3, 1)) -> ('NotTraversable', (3, 1))
-R3: ('Wall', (4, 2)) -> ('NotTraversable', (4, 2))
-R4: ('Trap', (3, 2)) -> ('Dangerous', (3, 2))
-R6: ('Coin', (1, 4)) -> ('PositiveUtility', (1, 4))
-R6: ('Coin', (2, 1)) -> ('PositiveUtility', (2, 1))
-R7: ('Bonus', (4, 3)) -> ('PositiveUtility', (4, 3))
-R5: ('Dangerous', (3, 2)) -> ('Avoid', (3, 2))
-GOAL=Key (4, 0)
-SEARCH=BFS, found=True, expanded=2, planned_cost=1, search_seconds=0.000055795
-PLAN=[(3, 0), (4, 0)]
-ACTION=DOWN
+R3: ('Wall', (1, 4)) -> ('NotTraversable', (1, 4))
+R3: ('Wall', (1, 5)) -> ('NotTraversable', (1, 5))
+R3: ('Wall', (2, 5)) -> ('NotTraversable', (2, 5))
+R3: ('Wall', (3, 5)) -> ('NotTraversable', (3, 5))
+R3: ('Wall', (4, 3)) -> ('NotTraversable', (4, 3))
+R3: ('Wall', (5, 3)) -> ('NotTraversable', (5, 3))
+R4: ('Trap', (1, 3)) -> ('Dangerous', (1, 3))
+R4: ('Trap', (5, 2)) -> ('Dangerous', (5, 2))
+R6: ('Coin', (0, 1)) -> ('PositiveUtility', (0, 1))
+R6: ('Coin', (0, 5)) -> ('PositiveUtility', (0, 5))
+R6: ('Coin', (3, 0)) -> ('PositiveUtility', (3, 0))
+R7: ('Bonus', (3, 1)) -> ('PositiveUtility', (3, 1))
+R5: ('Dangerous', (1, 3)) -> ('Avoid', (1, 3))
+R5: ('Dangerous', (5, 2)) -> ('Avoid', (5, 2))
+GOAL=Key (3, 4)
+SEARCH=BFS, found=True, expanded=1, planned_cost=1, search_seconds=0.000020013
+PLAN=[(4, 4), (3, 4)]
+ACTION=UP
 REASON=Хамгийн цөөн алхамтай замын эхний үйлдэл.
-AFTER ACTION=State(position=(4, 0), has_key=True, score=98, collected_coins=frozenset(), visited_cells=frozenset({(4, 0), (2, 0), (3, 0)}), consumed=frozenset({(4, 0)}))
-OBSERVED=((4, 0), 'K')
+AFTER ACTION=State(position=(3, 4), has_key=True, score=98, collected_coins=frozenset(), visited_cells=frozenset({(4, 4), (5, 4), (3, 4)}), consumed=frozenset({(3, 4)}))
+OBSERVED=((3, 4), 'K')
 ACTUAL COST=1
 
 STEP 3
-PERCEPT state=State(position=(4, 0), has_key=True, score=98, collected_coins=frozenset(), visited_cells=frozenset({(4, 0), (2, 0), (3, 0)}), consumed=frozenset({(4, 0)}))
-Visible=[((0, 0), '.'), ((0, 1), '.'), ((0, 2), '.'), ((0, 3), '.'), ((0, 4), '.'), ((1, 0), 'W'), ((1, 1), '.'), ((1, 2), '.'), ((1, 3), '.'), ((1, 4), 'C'), ((2, 0), '.'), ((2, 1), 'C'), ((2, 2), '.'), ((2, 3), 'W'), ((2, 4), '.'), ((3, 0), '.'), ((3, 1), 'W'), ((3, 2), 'T'), ((3, 3), '.'), ((3, 4), '.'), ((4, 0), '.'), ((4, 1), '?'), ((4, 2), 'W'), ((4, 3), 'B'), ((4, 4), 'E')]
-Observation=((4, 0), 'K')
-NEW FACTS=[('At', (4, 0)), ('Empty', (4, 0)), ('HasKey', True), ('ObservedKey', (4, 0)), ('Visited', (4, 0))]
-RETRACTED FACTS=[('At', (3, 0)), ('Avoid', (3, 2)), ('Dangerous', (3, 2)), ('Goal', 'Key'), ('HasKey', False), ('Key', (4, 0)), ('NotTraversable', (1, 0)), ('NotTraversable', (2, 3)), ('NotTraversable', (3, 1)), ('NotTraversable', (4, 2)), ('ObservedEmpty', (3, 0)), ('PositiveUtility', (1, 4)), ('PositiveUtility', (2, 1)), ('PositiveUtility', (4, 3))]
+PERCEPT state=State(position=(3, 4), has_key=True, score=98, collected_coins=frozenset(), visited_cells=frozenset({(4, 4), (5, 4), (3, 4)}), consumed=frozenset({(3, 4)}))
+Visible=[((0, 0), '.'), ((0, 1), 'C'), ((0, 2), 'E'), ((0, 3), '.'), ((0, 4), '.'), ((0, 5), 'C'), ((1, 0), '.'), ((1, 1), '.'), ((1, 2), '.'), ((1, 3), 'T'), ((1, 4), 'W'), ((1, 5), 'W'), ((2, 0), '.'), ((2, 1), '.'), ((2, 2), '.'), ((2, 3), '.'), ((2, 4), '.'), ((2, 5), 'W'), ((3, 0), 'C'), ((3, 1), 'B'), ((3, 2), '.'), ((3, 3), '.'), ((3, 4), '.'), ((3, 5), 'W'), ((4, 0), '.'), ((4, 1), '.'), ((4, 2), '.'), ((4, 3), 'W'), ((4, 4), '.'), ((4, 5), '.'), ((5, 0), '?'), ((5, 1), '.'), ((5, 2), 'T'), ((5, 3), 'W'), ((5, 4), '.'), ((5, 5), '.')]
+Observation=((3, 4), 'K')
+NEW FACTS=[('At', (3, 4)), ('Empty', (3, 4)), ('HasKey', True), ('ObservedKey', (3, 4)), ('Visited', (3, 4))]
+RETRACTED FACTS=[('At', (4, 4)), ('Avoid', (1, 3)), ('Avoid', (5, 2)), ('Dangerous', (1, 3)), ('Dangerous', (5, 2)), ('Goal', 'Key'), ('HasKey', False), ('Key', (3, 4)), ('NotTraversable', (1, 4)), ('NotTraversable', (1, 5)), ('NotTraversable', (2, 5)), ('NotTraversable', (3, 5)), ('NotTraversable', (4, 3)), ('NotTraversable', (5, 3)), ('ObservedEmpty', (4, 4)), ('PositiveUtility', (0, 1)), ('PositiveUtility', (0, 5)), ('PositiveUtility', (3, 0)), ('PositiveUtility', (3, 1))]
 INFERENCE
 R2: ('HasKey', True) -> ('Goal', 'Exit')
-R3: ('Wall', (1, 0)) -> ('NotTraversable', (1, 0))
-R3: ('Wall', (2, 3)) -> ('NotTraversable', (2, 3))
-R3: ('Wall', (3, 1)) -> ('NotTraversable', (3, 1))
-R3: ('Wall', (4, 2)) -> ('NotTraversable', (4, 2))
-R4: ('Trap', (3, 2)) -> ('Dangerous', (3, 2))
-R6: ('Coin', (1, 4)) -> ('PositiveUtility', (1, 4))
-R6: ('Coin', (2, 1)) -> ('PositiveUtility', (2, 1))
-R7: ('Bonus', (4, 3)) -> ('PositiveUtility', (4, 3))
-R5: ('Dangerous', (3, 2)) -> ('Avoid', (3, 2))
-GOAL=Exit (4, 4)
-SEARCH=BFS, found=True, expanded=20, planned_cost=15, search_seconds=0.000383944
-PLAN=[(4, 0), (3, 0), (2, 0), (2, 1), (2, 2), (3, 2), (3, 3), (4, 3), (4, 4)]
+R3: ('Wall', (1, 4)) -> ('NotTraversable', (1, 4))
+R3: ('Wall', (1, 5)) -> ('NotTraversable', (1, 5))
+R3: ('Wall', (2, 5)) -> ('NotTraversable', (2, 5))
+R3: ('Wall', (3, 5)) -> ('NotTraversable', (3, 5))
+R3: ('Wall', (4, 3)) -> ('NotTraversable', (4, 3))
+R3: ('Wall', (5, 3)) -> ('NotTraversable', (5, 3))
+R4: ('Trap', (1, 3)) -> ('Dangerous', (1, 3))
+R4: ('Trap', (5, 2)) -> ('Dangerous', (5, 2))
+R6: ('Coin', (0, 1)) -> ('PositiveUtility', (0, 1))
+R6: ('Coin', (0, 5)) -> ('PositiveUtility', (0, 5))
+R6: ('Coin', (3, 0)) -> ('PositiveUtility', (3, 0))
+R7: ('Bonus', (3, 1)) -> ('PositiveUtility', (3, 1))
+R5: ('Dangerous', (1, 3)) -> ('Avoid', (1, 3))
+R5: ('Dangerous', (5, 2)) -> ('Avoid', (5, 2))
+GOAL=Exit (0, 2)
+SEARCH=BFS, found=True, expanded=19, planned_cost=12, search_seconds=0.000188319
+PLAN=[(3, 4), (2, 4), (2, 3), (1, 3), (0, 3), (0, 2)]
 ACTION=UP
 REASON=Хамгийн цөөн алхамтай замын эхний үйлдэл.
-AFTER ACTION=State(position=(3, 0), has_key=True, score=97, collected_coins=frozenset(), visited_cells=frozenset({(4, 0), (2, 0), (3, 0)}), consumed=frozenset({(4, 0)}))
-OBSERVED=((3, 0), '.')
-ACTUAL COST=1
-
-STEP 4
-PERCEPT state=State(position=(3, 0), has_key=True, score=97, collected_coins=frozenset(), visited_cells=frozenset({(4, 0), (2, 0), (3, 0)}), consumed=frozenset({(4, 0)}))
-Visible=[((0, 0), '.'), ((0, 1), '.'), ((0, 2), '.'), ((0, 3), '.'), ((0, 4), '.'), ((1, 0), 'W'), ((1, 1), '.'), ((1, 2), '.'), ((1, 3), '.'), ((1, 4), 'C'), ((2, 0), '.'), ((2, 1), 'C'), ((2, 2), '.'), ((2, 3), 'W'), ((2, 4), '.'), ((3, 0), '.'), ((3, 1), 'W'), ((3, 2), 'T'), ((3, 3), '.'), ((3, 4), '.'), ((4, 0), '.'), ((4, 1), '?'), ((4, 2), 'W'), ((4, 3), 'B'), ((4, 4), 'E')]
-Observation=((3, 0), '.')
-NEW FACTS=[('At', (3, 0)), ('ObservedEmpty', (3, 0))]
-RETRACTED FACTS=[('At', (4, 0)), ('Avoid', (3, 2)), ('Dangerous', (3, 2)), ('Goal', 'Exit'), ('NotTraversable', (1, 0)), ('NotTraversable', (2, 3)), ('NotTraversable', (3, 1)), ('NotTraversable', (4, 2)), ('ObservedKey', (4, 0)), ('PositiveUtility', (1, 4)), ('PositiveUtility', (2, 1)), ('PositiveUtility', (4, 3))]
-INFERENCE
-R2: ('HasKey', True) -> ('Goal', 'Exit')
-R3: ('Wall', (1, 0)) -> ('NotTraversable', (1, 0))
-R3: ('Wall', (2, 3)) -> ('NotTraversable', (2, 3))
-R3: ('Wall', (3, 1)) -> ('NotTraversable', (3, 1))
-R3: ('Wall', (4, 2)) -> ('NotTraversable', (4, 2))
-R4: ('Trap', (3, 2)) -> ('Dangerous', (3, 2))
-R6: ('Coin', (1, 4)) -> ('PositiveUtility', (1, 4))
-R6: ('Coin', (2, 1)) -> ('PositiveUtility', (2, 1))
-R7: ('Bonus', (4, 3)) -> ('PositiveUtility', (4, 3))
-R5: ('Dangerous', (3, 2)) -> ('Avoid', (3, 2))
-GOAL=Exit (4, 4)
-SEARCH=BFS, found=True, expanded=20, planned_cost=14, search_seconds=0.000336242
-PLAN=[(3, 0), (2, 0), (2, 1), (2, 2), (3, 2), (3, 3), (4, 3), (4, 4)]
-ACTION=UP
-REASON=Хамгийн цөөн алхамтай замын эхний үйлдэл.
-AFTER ACTION=State(position=(2, 0), has_key=True, score=96, collected_coins=frozenset(), visited_cells=frozenset({(4, 0), (2, 0), (3, 0)}), consumed=frozenset({(4, 0)}))
-OBSERVED=((2, 0), '.')
-ACTUAL COST=1
-
-STEP 5
-PERCEPT state=State(position=(2, 0), has_key=True, score=96, collected_coins=frozenset(), visited_cells=frozenset({(4, 0), (2, 0), (3, 0)}), consumed=frozenset({(4, 0)}))
-Visible=[((0, 0), '.'), ((0, 1), '.'), ((0, 2), '.'), ((0, 3), '.'), ((0, 4), '.'), ((1, 0), 'W'), ((1, 1), '.'), ((1, 2), '.'), ((1, 3), '.'), ((1, 4), 'C'), ((2, 0), '.'), ((2, 1), 'C'), ((2, 2), '.'), ((2, 3), 'W'), ((2, 4), '.'), ((3, 0), '.'), ((3, 1), 'W'), ((3, 2), 'T'), ((3, 3), '.'), ((3, 4), '.'), ((4, 0), '.'), ((4, 1), '?'), ((4, 2), 'W'), ((4, 3), 'B'), ((4, 4), 'E')]
-Observation=((2, 0), '.')
-NEW FACTS=[('At', (2, 0)), ('ObservedEmpty', (2, 0))]
-RETRACTED FACTS=[('At', (3, 0)), ('Avoid', (3, 2)), ('Dangerous', (3, 2)), ('Goal', 'Exit'), ('NotTraversable', (1, 0)), ('NotTraversable', (2, 3)), ('NotTraversable', (3, 1)), ('NotTraversable', (4, 2)), ('ObservedEmpty', (3, 0)), ('PositiveUtility', (1, 4)), ('PositiveUtility', (2, 1)), ('PositiveUtility', (4, 3))]
-INFERENCE
-R2: ('HasKey', True) -> ('Goal', 'Exit')
-R3: ('Wall', (1, 0)) -> ('NotTraversable', (1, 0))
-R3: ('Wall', (2, 3)) -> ('NotTraversable', (2, 3))
-R3: ('Wall', (3, 1)) -> ('NotTraversable', (3, 1))
-R3: ('Wall', (4, 2)) -> ('NotTraversable', (4, 2))
-R4: ('Trap', (3, 2)) -> ('Dangerous', (3, 2))
-R6: ('Coin', (1, 4)) -> ('PositiveUtility', (1, 4))
-R6: ('Coin', (2, 1)) -> ('PositiveUtility', (2, 1))
-R7: ('Bonus', (4, 3)) -> ('PositiveUtility', (4, 3))
-R5: ('Dangerous', (3, 2)) -> ('Avoid', (3, 2))
-GOAL=Exit (4, 4)
-SEARCH=BFS, found=True, expanded=20, planned_cost=13, search_seconds=0.000313902
-PLAN=[(2, 0), (2, 1), (2, 2), (3, 2), (3, 3), (4, 3), (4, 4)]
-ACTION=RIGHT
-REASON=Хамгийн цөөн алхамтай замын эхний үйлдэл.
-AFTER ACTION=State(position=(2, 1), has_key=True, score=105, collected_coins=frozenset({(2, 1)}), visited_cells=frozenset({(4, 0), (2, 0), (2, 1), (3, 0)}), consumed=frozenset({(4, 0), (2, 1)}))
-OBSERVED=((2, 1), 'C')
-ACTUAL COST=1
-
-STEP 6
-PERCEPT state=State(position=(2, 1), has_key=True, score=105, collected_coins=frozenset({(2, 1)}), visited_cells=frozenset({(4, 0), (2, 0), (2, 1), (3, 0)}), consumed=frozenset({(4, 0), (2, 1)}))
-Visible=[((0, 0), '.'), ((0, 1), '.'), ((0, 2), '.'), ((0, 3), '.'), ((0, 4), '.'), ((1, 0), 'W'), ((1, 1), '.'), ((1, 2), '.'), ((1, 3), '.'), ((1, 4), 'C'), ((2, 0), '.'), ((2, 1), '.'), ((2, 2), '.'), ((2, 3), 'W'), ((2, 4), '.'), ((3, 0), '.'), ((3, 1), 'W'), ((3, 2), 'T'), ((3, 3), '.'), ((3, 4), '.'), ((4, 0), '.'), ((4, 1), '?'), ((4, 2), 'W'), ((4, 3), 'B'), ((4, 4), 'E')]
-Observation=((2, 1), 'C')
-NEW FACTS=[('At', (2, 1)), ('Empty', (2, 1)), ('ObservedCoin', (2, 1)), ('Visited', (2, 1))]
-RETRACTED FACTS=[('At', (2, 0)), ('Avoid', (3, 2)), ('Coin', (2, 1)), ('Dangerous', (3, 2)), ('Goal', 'Exit'), ('NotTraversable', (1, 0)), ('NotTraversable', (2, 3)), ('NotTraversable', (3, 1)), ('NotTraversable', (4, 2)), ('ObservedEmpty', (2, 0)), ('PositiveUtility', (1, 4)), ('PositiveUtility', (2, 1)), ('PositiveUtility', (4, 3))]
-INFERENCE
-R2: ('HasKey', True) -> ('Goal', 'Exit')
-R3: ('Wall', (1, 0)) -> ('NotTraversable', (1, 0))
-R3: ('Wall', (2, 3)) -> ('NotTraversable', (2, 3))
-R3: ('Wall', (3, 1)) -> ('NotTraversable', (3, 1))
-R3: ('Wall', (4, 2)) -> ('NotTraversable', (4, 2))
-R4: ('Trap', (3, 2)) -> ('Dangerous', (3, 2))
-R6: ('Coin', (1, 4)) -> ('PositiveUtility', (1, 4))
-R7: ('Bonus', (4, 3)) -> ('PositiveUtility', (4, 3))
-R5: ('Dangerous', (3, 2)) -> ('Avoid', (3, 2))
-GOAL=Exit (4, 4)
-SEARCH=BFS, found=True, expanded=20, planned_cost=12, search_seconds=0.000319119
-PLAN=[(2, 1), (2, 2), (3, 2), (3, 3), (4, 3), (4, 4)]
-ACTION=RIGHT
-REASON=Хамгийн цөөн алхамтай замын эхний үйлдэл.
-AFTER ACTION=State(position=(2, 2), has_key=True, score=104, collected_coins=frozenset({(2, 1)}), visited_cells=frozenset({(4, 0), (2, 1), (2, 2), (2, 0), (3, 0)}), consumed=frozenset({(4, 0), (2, 1)}))
-OBSERVED=((2, 2), '.')
-ACTUAL COST=1
-
-STEP 7
-PERCEPT state=State(position=(2, 2), has_key=True, score=104, collected_coins=frozenset({(2, 1)}), visited_cells=frozenset({(4, 0), (2, 1), (2, 2), (2, 0), (3, 0)}), consumed=frozenset({(4, 0), (2, 1)}))
-Visible=[((0, 0), '.'), ((0, 1), '.'), ((0, 2), '.'), ((0, 3), '.'), ((0, 4), '.'), ((1, 0), 'W'), ((1, 1), '.'), ((1, 2), '.'), ((1, 3), '.'), ((1, 4), 'C'), ((2, 0), '.'), ((2, 1), '.'), ((2, 2), '.'), ((2, 3), 'W'), ((2, 4), '.'), ((3, 0), '.'), ((3, 1), 'W'), ((3, 2), 'T'), ((3, 3), '.'), ((3, 4), '.'), ((4, 0), '.'), ((4, 1), '?'), ((4, 2), 'W'), ((4, 3), 'B'), ((4, 4), 'E')]
-Observation=((2, 2), '.')
-NEW FACTS=[('At', (2, 2)), ('ObservedEmpty', (2, 2)), ('Visited', (2, 2))]
-RETRACTED FACTS=[('At', (2, 1)), ('Avoid', (3, 2)), ('Dangerous', (3, 2)), ('Goal', 'Exit'), ('NotTraversable', (1, 0)), ('NotTraversable', (2, 3)), ('NotTraversable', (3, 1)), ('NotTraversable', (4, 2)), ('ObservedCoin', (2, 1)), ('PositiveUtility', (1, 4)), ('PositiveUtility', (4, 3))]
-INFERENCE
-R2: ('HasKey', True) -> ('Goal', 'Exit')
-R3: ('Wall', (1, 0)) -> ('NotTraversable', (1, 0))
-R3: ('Wall', (2, 3)) -> ('NotTraversable', (2, 3))
-R3: ('Wall', (3, 1)) -> ('NotTraversable', (3, 1))
-R3: ('Wall', (4, 2)) -> ('NotTraversable', (4, 2))
-R4: ('Trap', (3, 2)) -> ('Dangerous', (3, 2))
-R6: ('Coin', (1, 4)) -> ('PositiveUtility', (1, 4))
-R7: ('Bonus', (4, 3)) -> ('PositiveUtility', (4, 3))
-R5: ('Dangerous', (3, 2)) -> ('Avoid', (3, 2))
-GOAL=Exit (4, 4)
-SEARCH=BFS, found=True, expanded=18, planned_cost=11, search_seconds=0.000292545
-PLAN=[(2, 2), (3, 2), (3, 3), (4, 3), (4, 4)]
-ACTION=DOWN
-REASON=Хамгийн цөөн алхамтай замын эхний үйлдэл.
-AFTER ACTION=State(position=(3, 2), has_key=True, score=88, collected_coins=frozenset({(2, 1)}), visited_cells=frozenset({(4, 0), (2, 1), (2, 2), (3, 2), (2, 0), (3, 0)}), consumed=frozenset({(4, 0), (2, 1)}))
-OBSERVED=((3, 2), 'T')
-ACTUAL COST=8
-
-STEP 8
-PERCEPT state=State(position=(3, 2), has_key=True, score=88, collected_coins=frozenset({(2, 1)}), visited_cells=frozenset({(4, 0), (2, 1), (2, 2), (3, 2), (2, 0), (3, 0)}), consumed=frozenset({(4, 0), (2, 1)}))
-Visible=[((0, 0), '.'), ((0, 1), '.'), ((0, 2), '.'), ((0, 3), '.'), ((0, 4), '.'), ((1, 0), 'W'), ((1, 1), '.'), ((1, 2), '.'), ((1, 3), '.'), ((1, 4), 'C'), ((2, 0), '.'), ((2, 1), '.'), ((2, 2), '.'), ((2, 3), 'W'), ((2, 4), '.'), ((3, 0), '.'), ((3, 1), 'W'), ((3, 2), 'T'), ((3, 3), '.'), ((3, 4), '.'), ((4, 0), '.'), ((4, 1), '?'), ((4, 2), 'W'), ((4, 3), 'B'), ((4, 4), 'E')]
-Observation=((3, 2), 'T')
-NEW FACTS=[('At', (3, 2)), ('ObservedTrap', (3, 2)), ('Visited', (3, 2))]
-RETRACTED FACTS=[('At', (2, 2)), ('Avoid', (3, 2)), ('Dangerous', (3, 2)), ('Goal', 'Exit'), ('NotTraversable', (1, 0)), ('NotTraversable', (2, 3)), ('NotTraversable', (3, 1)), ('NotTraversable', (4, 2)), ('ObservedEmpty', (2, 2)), ('PositiveUtility', (1, 4)), ('PositiveUtility', (4, 3))]
-INFERENCE
-R2: ('HasKey', True) -> ('Goal', 'Exit')
-R3: ('Wall', (1, 0)) -> ('NotTraversable', (1, 0))
-R3: ('Wall', (2, 3)) -> ('NotTraversable', (2, 3))
-R3: ('Wall', (3, 1)) -> ('NotTraversable', (3, 1))
-R3: ('Wall', (4, 2)) -> ('NotTraversable', (4, 2))
-R4: ('Trap', (3, 2)) -> ('Dangerous', (3, 2))
-R6: ('Coin', (1, 4)) -> ('PositiveUtility', (1, 4))
-R7: ('Bonus', (4, 3)) -> ('PositiveUtility', (4, 3))
-R5: ('Dangerous', (3, 2)) -> ('Avoid', (3, 2))
-GOAL=Exit (4, 4)
-SEARCH=BFS, found=True, expanded=11, planned_cost=3, search_seconds=0.000200664
-PLAN=[(3, 2), (3, 3), (4, 3), (4, 4)]
-ACTION=RIGHT
-REASON=Хамгийн цөөн алхамтай замын эхний үйлдэл.
-AFTER ACTION=State(position=(3, 3), has_key=True, score=87, collected_coins=frozenset({(2, 1)}), visited_cells=frozenset({(4, 0), (3, 3), (2, 1), (2, 2), (3, 2), (2, 0), (3, 0)}), consumed=frozenset({(4, 0), (2, 1)}))
-OBSERVED=((3, 3), '.')
-ACTUAL COST=1
-
-STEP 9
-PERCEPT state=State(position=(3, 3), has_key=True, score=87, collected_coins=frozenset({(2, 1)}), visited_cells=frozenset({(4, 0), (3, 3), (2, 1), (2, 2), (3, 2), (2, 0), (3, 0)}), consumed=frozenset({(4, 0), (2, 1)}))
-Visible=[((0, 0), '.'), ((0, 1), '.'), ((0, 2), '.'), ((0, 3), '.'), ((0, 4), '.'), ((1, 0), 'W'), ((1, 1), '.'), ((1, 2), '.'), ((1, 3), '.'), ((1, 4), 'C'), ((2, 0), '.'), ((2, 1), '.'), ((2, 2), '.'), ((2, 3), 'W'), ((2, 4), '.'), ((3, 0), '.'), ((3, 1), 'W'), ((3, 2), 'T'), ((3, 3), '.'), ((3, 4), '.'), ((4, 0), '.'), ((4, 1), '?'), ((4, 2), 'W'), ((4, 3), 'B'), ((4, 4), 'E')]
-Observation=((3, 3), '.')
-NEW FACTS=[('At', (3, 3)), ('ObservedEmpty', (3, 3)), ('Visited', (3, 3))]
-RETRACTED FACTS=[('At', (3, 2)), ('Avoid', (3, 2)), ('Dangerous', (3, 2)), ('Goal', 'Exit'), ('NotTraversable', (1, 0)), ('NotTraversable', (2, 3)), ('NotTraversable', (3, 1)), ('NotTraversable', (4, 2)), ('ObservedTrap', (3, 2)), ('PositiveUtility', (1, 4)), ('PositiveUtility', (4, 3))]
-INFERENCE
-R2: ('HasKey', True) -> ('Goal', 'Exit')
-R3: ('Wall', (1, 0)) -> ('NotTraversable', (1, 0))
-R3: ('Wall', (2, 3)) -> ('NotTraversable', (2, 3))
-R3: ('Wall', (3, 1)) -> ('NotTraversable', (3, 1))
-R3: ('Wall', (4, 2)) -> ('NotTraversable', (4, 2))
-R4: ('Trap', (3, 2)) -> ('Dangerous', (3, 2))
-R6: ('Coin', (1, 4)) -> ('PositiveUtility', (1, 4))
-R7: ('Bonus', (4, 3)) -> ('PositiveUtility', (4, 3))
-R5: ('Dangerous', (3, 2)) -> ('Avoid', (3, 2))
-GOAL=Exit (4, 4)
-SEARCH=BFS, found=True, expanded=4, planned_cost=2, search_seconds=0.000105539
-PLAN=[(3, 3), (4, 3), (4, 4)]
-ACTION=DOWN
-REASON=Хамгийн цөөн алхамтай замын эхний үйлдэл.
-AFTER ACTION=State(position=(4, 3), has_key=True, score=104, collected_coins=frozenset({(2, 1)}), visited_cells=frozenset({(4, 3), (4, 0), (3, 3), (2, 1), (2, 2), (3, 2), (2, 0), (3, 0)}), consumed=frozenset({(4, 0), (2, 1), (4, 3)}))
-OBSERVED=((4, 3), 'B')
-ACTUAL COST=1
-
-STEP 10
-PERCEPT state=State(position=(4, 3), has_key=True, score=104, collected_coins=frozenset({(2, 1)}), visited_cells=frozenset({(4, 3), (4, 0), (3, 3), (2, 1), (2, 2), (3, 2), (2, 0), (3, 0)}), consumed=frozenset({(4, 0), (2, 1), (4, 3)}))
-Visible=[((0, 0), '.'), ((0, 1), '.'), ((0, 2), '.'), ((0, 3), '.'), ((0, 4), '.'), ((1, 0), 'W'), ((1, 1), '.'), ((1, 2), '.'), ((1, 3), '.'), ((1, 4), 'C'), ((2, 0), '.'), ((2, 1), '.'), ((2, 2), '.'), ((2, 3), 'W'), ((2, 4), '.'), ((3, 0), '.'), ((3, 1), 'W'), ((3, 2), 'T'), ((3, 3), '.'), ((3, 4), '.'), ((4, 0), '.'), ((4, 1), '?'), ((4, 2), 'W'), ((4, 3), '.'), ((4, 4), 'E')]
-Observation=((4, 3), 'B')
-NEW FACTS=[('At', (4, 3)), ('Empty', (4, 3)), ('ObservedBonus', (4, 3)), ('Visited', (4, 3))]
-RETRACTED FACTS=[('At', (3, 3)), ('Avoid', (3, 2)), ('Bonus', (4, 3)), ('Dangerous', (3, 2)), ('Goal', 'Exit'), ('NotTraversable', (1, 0)), ('NotTraversable', (2, 3)), ('NotTraversable', (3, 1)), ('NotTraversable', (4, 2)), ('ObservedEmpty', (3, 3)), ('PositiveUtility', (1, 4)), ('PositiveUtility', (4, 3))]
-INFERENCE
-R2: ('HasKey', True) -> ('Goal', 'Exit')
-R3: ('Wall', (1, 0)) -> ('NotTraversable', (1, 0))
-R3: ('Wall', (2, 3)) -> ('NotTraversable', (2, 3))
-R3: ('Wall', (3, 1)) -> ('NotTraversable', (3, 1))
-R3: ('Wall', (4, 2)) -> ('NotTraversable', (4, 2))
-R4: ('Trap', (3, 2)) -> ('Dangerous', (3, 2))
-R6: ('Coin', (1, 4)) -> ('PositiveUtility', (1, 4))
-R5: ('Dangerous', (3, 2)) -> ('Avoid', (3, 2))
-GOAL=Exit (4, 4)
-SEARCH=BFS, found=True, expanded=2, planned_cost=1, search_seconds=0.000044330
-PLAN=[(4, 3), (4, 4)]
-ACTION=RIGHT
-REASON=Хамгийн цөөн алхамтай замын эхний үйлдэл.
-AFTER ACTION=State(position=(4, 4), has_key=True, score=103, collected_coins=frozenset({(2, 1)}), visited_cells=frozenset({(4, 4), (4, 0), (2, 1), (4, 3), (2, 0), (3, 0), (3, 3), (2, 2), (3, 2)}), consumed=frozenset({(4, 0), (2, 1), (4, 3)}))
-OBSERVED=((4, 4), 'E')
-ACTUAL COST=1
-FINAL PERCEPT={'state': State(position=(4, 4), has_key=True, score=103, collected_coins=frozenset({(2, 1)}), visited_cells=frozenset({(4, 4), (4, 0), (2, 1), (4, 3), (2, 0), (3, 0), (3, 3), (2, 2), (3, 2)}), consumed=frozenset({(4, 0), (2, 1), (4, 3)})), 'visible': {(0, 0): '.', (0, 1): '.', (0, 2): '.', (0, 3): '.', (0, 4): '.', (1, 0): 'W', (1, 1): '.', (1, 2): '.', (1, 3): '.', (1, 4): 'C', (2, 0): '.', (2, 1): '.', (2, 2): '.', (2, 3): 'W', (2, 4): '.', (3, 0): '.', (3, 1): 'W', (3, 2): 'T', (3, 3): '.', (3, 4): '.', (4, 0): '.', (4, 1): '?', (4, 2): 'W', (4, 3): '.', (4, 4): 'E'}, 'last_observation': ((4, 4), 'E')}
-NEW FACTS=[('At', (4, 4)), ('ObservedExit', (4, 4)), ('Visited', (4, 4))]
-RETRACTED FACTS=[('At', (4, 3)), ('Avoid', (3, 2)), ('Dangerous', (3, 2)), ('Goal', 'Exit'), ('NotTraversable', (1, 0)), ('NotTraversable', (2, 3)), ('NotTraversable', (3, 1)), ('NotTraversable', (4, 2)), ('ObservedBonus', (4, 3)), ('PositiveUtility', (1, 4))]
-R2: ('HasKey', True) -> ('Goal', 'Exit')
-R3: ('Wall', (1, 0)) -> ('NotTraversable', (1, 0))
-R3: ('Wall', (2, 3)) -> ('NotTraversable', (2, 3))
-R3: ('Wall', (3, 1)) -> ('NotTraversable', (3, 1))
-R3: ('Wall', (4, 2)) -> ('NotTraversable', (4, 2))
-R4: ('Trap', (3, 2)) -> ('Dangerous', (3, 2))
-R6: ('Coin', (1, 4)) -> ('PositiveUtility', (1, 4))
-R5: ('Dangerous', (3, 2)) -> ('Avoid', (3, 2))
-RESULT={"algorithm": "BFS", "path_length": 10, "expanded_nodes": 120, "total_path_cost": 17, "search_seconds": 0.0021534930037887534, "execution_seconds": 0.013710319999518106, "goal_reached": true, "score": 103, "coins": 1, "traps": 1, "unique_cells": 9, "searches": 10, "status": "REACHED"}
-
-ALGORITHM=A*
-INITIAL BOARD
-. . . . .
-W . . . C
-A C . W .
-. W T . .
-K ? W B E
-
-STEP 1
-PERCEPT state=State(position=(2, 0), has_key=False, score=100, collected_coins=frozenset(), visited_cells=frozenset({(2, 0)}), consumed=frozenset())
-Visible=[((0, 0), '.'), ((0, 1), '.'), ((0, 2), '.'), ((0, 3), '.'), ((0, 4), '.'), ((1, 0), 'W'), ((1, 1), '.'), ((1, 2), '.'), ((1, 3), '.'), ((1, 4), 'C'), ((2, 0), '.'), ((2, 1), 'C'), ((2, 2), '.'), ((2, 3), 'W'), ((2, 4), '.'), ((3, 0), '.'), ((3, 1), 'W'), ((3, 2), 'T'), ((3, 3), '.'), ((3, 4), '.'), ((4, 0), 'K'), ((4, 1), '?'), ((4, 2), 'W'), ((4, 3), 'B'), ((4, 4), 'E')]
-Observation=None
-NEW FACTS=[('At', (2, 0)), ('Bonus', (4, 3)), ('Coin', (1, 4)), ('Coin', (2, 1)), ('Empty', (0, 0)), ('Empty', (0, 1)), ('Empty', (0, 2)), ('Empty', (0, 3)), ('Empty', (0, 4)), ('Empty', (1, 1)), ('Empty', (1, 2)), ('Empty', (1, 3)), ('Empty', (2, 0)), ('Empty', (2, 2)), ('Empty', (2, 4)), ('Empty', (3, 0)), ('Empty', (3, 3)), ('Empty', (3, 4)), ('Exit', (4, 4)), ('HasKey', False), ('Key', (4, 0)), ('Trap', (3, 2)), ('Unknown', (4, 1)), ('Visited', (2, 0)), ('Wall', (1, 0)), ('Wall', (2, 3)), ('Wall', (3, 1)), ('Wall', (4, 2))]
-RETRACTED FACTS=[]
-INFERENCE
-R1: ('HasKey', False) -> ('Goal', 'Key')
-R3: ('Wall', (1, 0)) -> ('NotTraversable', (1, 0))
-R3: ('Wall', (2, 3)) -> ('NotTraversable', (2, 3))
-R3: ('Wall', (3, 1)) -> ('NotTraversable', (3, 1))
-R3: ('Wall', (4, 2)) -> ('NotTraversable', (4, 2))
-R4: ('Trap', (3, 2)) -> ('Dangerous', (3, 2))
-R6: ('Coin', (1, 4)) -> ('PositiveUtility', (1, 4))
-R6: ('Coin', (2, 1)) -> ('PositiveUtility', (2, 1))
-R7: ('Bonus', (4, 3)) -> ('PositiveUtility', (4, 3))
-R5: ('Dangerous', (3, 2)) -> ('Avoid', (3, 2))
-GOAL=Key (4, 0)
-SEARCH=A*, found=True, expanded=2, planned_cost=2, search_seconds=0.000063581
-PLAN=[(2, 0), (3, 0), (4, 0)]
-ACTION=DOWN
-REASON=Мэдэгдэж буй эрсдэлийн өртөг хамгийн бага замын эхний үйлдэл.
-AFTER ACTION=State(position=(3, 0), has_key=False, score=99, collected_coins=frozenset(), visited_cells=frozenset({(2, 0), (3, 0)}), consumed=frozenset())
-OBSERVED=((3, 0), '.')
-ACTUAL COST=1
-
-STEP 2
-PERCEPT state=State(position=(3, 0), has_key=False, score=99, collected_coins=frozenset(), visited_cells=frozenset({(2, 0), (3, 0)}), consumed=frozenset())
-Visible=[((0, 0), '.'), ((0, 1), '.'), ((0, 2), '.'), ((0, 3), '.'), ((0, 4), '.'), ((1, 0), 'W'), ((1, 1), '.'), ((1, 2), '.'), ((1, 3), '.'), ((1, 4), 'C'), ((2, 0), '.'), ((2, 1), 'C'), ((2, 2), '.'), ((2, 3), 'W'), ((2, 4), '.'), ((3, 0), '.'), ((3, 1), 'W'), ((3, 2), 'T'), ((3, 3), '.'), ((3, 4), '.'), ((4, 0), 'K'), ((4, 1), '?'), ((4, 2), 'W'), ((4, 3), 'B'), ((4, 4), 'E')]
-Observation=((3, 0), '.')
-NEW FACTS=[('At', (3, 0)), ('ObservedEmpty', (3, 0)), ('Visited', (3, 0))]
-RETRACTED FACTS=[('At', (2, 0)), ('Avoid', (3, 2)), ('Dangerous', (3, 2)), ('Goal', 'Key'), ('NotTraversable', (1, 0)), ('NotTraversable', (2, 3)), ('NotTraversable', (3, 1)), ('NotTraversable', (4, 2)), ('PositiveUtility', (1, 4)), ('PositiveUtility', (2, 1)), ('PositiveUtility', (4, 3))]
-INFERENCE
-R1: ('HasKey', False) -> ('Goal', 'Key')
-R3: ('Wall', (1, 0)) -> ('NotTraversable', (1, 0))
-R3: ('Wall', (2, 3)) -> ('NotTraversable', (2, 3))
-R3: ('Wall', (3, 1)) -> ('NotTraversable', (3, 1))
-R3: ('Wall', (4, 2)) -> ('NotTraversable', (4, 2))
-R4: ('Trap', (3, 2)) -> ('Dangerous', (3, 2))
-R6: ('Coin', (1, 4)) -> ('PositiveUtility', (1, 4))
-R6: ('Coin', (2, 1)) -> ('PositiveUtility', (2, 1))
-R7: ('Bonus', (4, 3)) -> ('PositiveUtility', (4, 3))
-R5: ('Dangerous', (3, 2)) -> ('Avoid', (3, 2))
-GOAL=Key (4, 0)
-SEARCH=A*, found=True, expanded=1, planned_cost=1, search_seconds=0.000025436
-PLAN=[(3, 0), (4, 0)]
-ACTION=DOWN
-REASON=Мэдэгдэж буй эрсдэлийн өртөг хамгийн бага замын эхний үйлдэл.
-AFTER ACTION=State(position=(4, 0), has_key=True, score=98, collected_coins=frozenset(), visited_cells=frozenset({(4, 0), (2, 0), (3, 0)}), consumed=frozenset({(4, 0)}))
-OBSERVED=((4, 0), 'K')
-ACTUAL COST=1
-
-STEP 3
-PERCEPT state=State(position=(4, 0), has_key=True, score=98, collected_coins=frozenset(), visited_cells=frozenset({(4, 0), (2, 0), (3, 0)}), consumed=frozenset({(4, 0)}))
-Visible=[((0, 0), '.'), ((0, 1), '.'), ((0, 2), '.'), ((0, 3), '.'), ((0, 4), '.'), ((1, 0), 'W'), ((1, 1), '.'), ((1, 2), '.'), ((1, 3), '.'), ((1, 4), 'C'), ((2, 0), '.'), ((2, 1), 'C'), ((2, 2), '.'), ((2, 3), 'W'), ((2, 4), '.'), ((3, 0), '.'), ((3, 1), 'W'), ((3, 2), 'T'), ((3, 3), '.'), ((3, 4), '.'), ((4, 0), '.'), ((4, 1), '?'), ((4, 2), 'W'), ((4, 3), 'B'), ((4, 4), 'E')]
-Observation=((4, 0), 'K')
-NEW FACTS=[('At', (4, 0)), ('Empty', (4, 0)), ('HasKey', True), ('ObservedKey', (4, 0)), ('Visited', (4, 0))]
-RETRACTED FACTS=[('At', (3, 0)), ('Avoid', (3, 2)), ('Dangerous', (3, 2)), ('Goal', 'Key'), ('HasKey', False), ('Key', (4, 0)), ('NotTraversable', (1, 0)), ('NotTraversable', (2, 3)), ('NotTraversable', (3, 1)), ('NotTraversable', (4, 2)), ('ObservedEmpty', (3, 0)), ('PositiveUtility', (1, 4)), ('PositiveUtility', (2, 1)), ('PositiveUtility', (4, 3))]
-INFERENCE
-R2: ('HasKey', True) -> ('Goal', 'Exit')
-R3: ('Wall', (1, 0)) -> ('NotTraversable', (1, 0))
-R3: ('Wall', (2, 3)) -> ('NotTraversable', (2, 3))
-R3: ('Wall', (3, 1)) -> ('NotTraversable', (3, 1))
-R3: ('Wall', (4, 2)) -> ('NotTraversable', (4, 2))
-R4: ('Trap', (3, 2)) -> ('Dangerous', (3, 2))
-R6: ('Coin', (1, 4)) -> ('PositiveUtility', (1, 4))
-R6: ('Coin', (2, 1)) -> ('PositiveUtility', (2, 1))
-R7: ('Bonus', (4, 3)) -> ('PositiveUtility', (4, 3))
-R5: ('Dangerous', (3, 2)) -> ('Avoid', (3, 2))
-GOAL=Exit (4, 4)
-SEARCH=A*, found=True, expanded=12, planned_cost=10, search_seconds=0.000160465
-PLAN=[(4, 0), (3, 0), (2, 0), (2, 1), (2, 2), (1, 2), (1, 3), (1, 4), (2, 4), (3, 4), (4, 4)]
-ACTION=UP
-REASON=Мэдэгдэж буй эрсдэлийн өртөг хамгийн бага замын эхний үйлдэл.
-AFTER ACTION=State(position=(3, 0), has_key=True, score=97, collected_coins=frozenset(), visited_cells=frozenset({(4, 0), (2, 0), (3, 0)}), consumed=frozenset({(4, 0)}))
-OBSERVED=((3, 0), '.')
-ACTUAL COST=1
-
-STEP 4
-PERCEPT state=State(position=(3, 0), has_key=True, score=97, collected_coins=frozenset(), visited_cells=frozenset({(4, 0), (2, 0), (3, 0)}), consumed=frozenset({(4, 0)}))
-Visible=[((0, 0), '.'), ((0, 1), '.'), ((0, 2), '.'), ((0, 3), '.'), ((0, 4), '.'), ((1, 0), 'W'), ((1, 1), '.'), ((1, 2), '.'), ((1, 3), '.'), ((1, 4), 'C'), ((2, 0), '.'), ((2, 1), 'C'), ((2, 2), '.'), ((2, 3), 'W'), ((2, 4), '.'), ((3, 0), '.'), ((3, 1), 'W'), ((3, 2), 'T'), ((3, 3), '.'), ((3, 4), '.'), ((4, 0), '.'), ((4, 1), '?'), ((4, 2), 'W'), ((4, 3), 'B'), ((4, 4), 'E')]
-Observation=((3, 0), '.')
-NEW FACTS=[('At', (3, 0)), ('ObservedEmpty', (3, 0))]
-RETRACTED FACTS=[('At', (4, 0)), ('Avoid', (3, 2)), ('Dangerous', (3, 2)), ('Goal', 'Exit'), ('NotTraversable', (1, 0)), ('NotTraversable', (2, 3)), ('NotTraversable', (3, 1)), ('NotTraversable', (4, 2)), ('ObservedKey', (4, 0)), ('PositiveUtility', (1, 4)), ('PositiveUtility', (2, 1)), ('PositiveUtility', (4, 3))]
-INFERENCE
-R2: ('HasKey', True) -> ('Goal', 'Exit')
-R3: ('Wall', (1, 0)) -> ('NotTraversable', (1, 0))
-R3: ('Wall', (2, 3)) -> ('NotTraversable', (2, 3))
-R3: ('Wall', (3, 1)) -> ('NotTraversable', (3, 1))
-R3: ('Wall', (4, 2)) -> ('NotTraversable', (4, 2))
-R4: ('Trap', (3, 2)) -> ('Dangerous', (3, 2))
-R6: ('Coin', (1, 4)) -> ('PositiveUtility', (1, 4))
-R6: ('Coin', (2, 1)) -> ('PositiveUtility', (2, 1))
-R7: ('Bonus', (4, 3)) -> ('PositiveUtility', (4, 3))
-R5: ('Dangerous', (3, 2)) -> ('Avoid', (3, 2))
-GOAL=Exit (4, 4)
-SEARCH=A*, found=True, expanded=12, planned_cost=9, search_seconds=0.000160600
-PLAN=[(3, 0), (2, 0), (2, 1), (2, 2), (1, 2), (1, 3), (1, 4), (2, 4), (3, 4), (4, 4)]
-ACTION=UP
-REASON=Мэдэгдэж буй эрсдэлийн өртөг хамгийн бага замын эхний үйлдэл.
-AFTER ACTION=State(position=(2, 0), has_key=True, score=96, collected_coins=frozenset(), visited_cells=frozenset({(4, 0), (2, 0), (3, 0)}), consumed=frozenset({(4, 0)}))
-OBSERVED=((2, 0), '.')
-ACTUAL COST=1
-
-STEP 5
-PERCEPT state=State(position=(2, 0), has_key=True, score=96, collected_coins=frozenset(), visited_cells=frozenset({(4, 0), (2, 0), (3, 0)}), consumed=frozenset({(4, 0)}))
-Visible=[((0, 0), '.'), ((0, 1), '.'), ((0, 2), '.'), ((0, 3), '.'), ((0, 4), '.'), ((1, 0), 'W'), ((1, 1), '.'), ((1, 2), '.'), ((1, 3), '.'), ((1, 4), 'C'), ((2, 0), '.'), ((2, 1), 'C'), ((2, 2), '.'), ((2, 3), 'W'), ((2, 4), '.'), ((3, 0), '.'), ((3, 1), 'W'), ((3, 2), 'T'), ((3, 3), '.'), ((3, 4), '.'), ((4, 0), '.'), ((4, 1), '?'), ((4, 2), 'W'), ((4, 3), 'B'), ((4, 4), 'E')]
-Observation=((2, 0), '.')
-NEW FACTS=[('At', (2, 0)), ('ObservedEmpty', (2, 0))]
-RETRACTED FACTS=[('At', (3, 0)), ('Avoid', (3, 2)), ('Dangerous', (3, 2)), ('Goal', 'Exit'), ('NotTraversable', (1, 0)), ('NotTraversable', (2, 3)), ('NotTraversable', (3, 1)), ('NotTraversable', (4, 2)), ('ObservedEmpty', (3, 0)), ('PositiveUtility', (1, 4)), ('PositiveUtility', (2, 1)), ('PositiveUtility', (4, 3))]
-INFERENCE
-R2: ('HasKey', True) -> ('Goal', 'Exit')
-R3: ('Wall', (1, 0)) -> ('NotTraversable', (1, 0))
-R3: ('Wall', (2, 3)) -> ('NotTraversable', (2, 3))
-R3: ('Wall', (3, 1)) -> ('NotTraversable', (3, 1))
-R3: ('Wall', (4, 2)) -> ('NotTraversable', (4, 2))
-R4: ('Trap', (3, 2)) -> ('Dangerous', (3, 2))
-R6: ('Coin', (1, 4)) -> ('PositiveUtility', (1, 4))
-R6: ('Coin', (2, 1)) -> ('PositiveUtility', (2, 1))
-R7: ('Bonus', (4, 3)) -> ('PositiveUtility', (4, 3))
-R5: ('Dangerous', (3, 2)) -> ('Avoid', (3, 2))
-GOAL=Exit (4, 4)
-SEARCH=A*, found=True, expanded=12, planned_cost=8, search_seconds=0.000150468
-PLAN=[(2, 0), (2, 1), (2, 2), (1, 2), (1, 3), (1, 4), (2, 4), (3, 4), (4, 4)]
-ACTION=RIGHT
-REASON=Мэдэгдэж буй эрсдэлийн өртөг хамгийн бага замын эхний үйлдэл.
-AFTER ACTION=State(position=(2, 1), has_key=True, score=105, collected_coins=frozenset({(2, 1)}), visited_cells=frozenset({(4, 0), (2, 0), (2, 1), (3, 0)}), consumed=frozenset({(4, 0), (2, 1)}))
-OBSERVED=((2, 1), 'C')
-ACTUAL COST=1
-
-STEP 6
-PERCEPT state=State(position=(2, 1), has_key=True, score=105, collected_coins=frozenset({(2, 1)}), visited_cells=frozenset({(4, 0), (2, 0), (2, 1), (3, 0)}), consumed=frozenset({(4, 0), (2, 1)}))
-Visible=[((0, 0), '.'), ((0, 1), '.'), ((0, 2), '.'), ((0, 3), '.'), ((0, 4), '.'), ((1, 0), 'W'), ((1, 1), '.'), ((1, 2), '.'), ((1, 3), '.'), ((1, 4), 'C'), ((2, 0), '.'), ((2, 1), '.'), ((2, 2), '.'), ((2, 3), 'W'), ((2, 4), '.'), ((3, 0), '.'), ((3, 1), 'W'), ((3, 2), 'T'), ((3, 3), '.'), ((3, 4), '.'), ((4, 0), '.'), ((4, 1), '?'), ((4, 2), 'W'), ((4, 3), 'B'), ((4, 4), 'E')]
-Observation=((2, 1), 'C')
-NEW FACTS=[('At', (2, 1)), ('Empty', (2, 1)), ('ObservedCoin', (2, 1)), ('Visited', (2, 1))]
-RETRACTED FACTS=[('At', (2, 0)), ('Avoid', (3, 2)), ('Coin', (2, 1)), ('Dangerous', (3, 2)), ('Goal', 'Exit'), ('NotTraversable', (1, 0)), ('NotTraversable', (2, 3)), ('NotTraversable', (3, 1)), ('NotTraversable', (4, 2)), ('ObservedEmpty', (2, 0)), ('PositiveUtility', (1, 4)), ('PositiveUtility', (2, 1)), ('PositiveUtility', (4, 3))]
-INFERENCE
-R2: ('HasKey', True) -> ('Goal', 'Exit')
-R3: ('Wall', (1, 0)) -> ('NotTraversable', (1, 0))
-R3: ('Wall', (2, 3)) -> ('NotTraversable', (2, 3))
-R3: ('Wall', (3, 1)) -> ('NotTraversable', (3, 1))
-R3: ('Wall', (4, 2)) -> ('NotTraversable', (4, 2))
-R4: ('Trap', (3, 2)) -> ('Dangerous', (3, 2))
-R6: ('Coin', (1, 4)) -> ('PositiveUtility', (1, 4))
-R7: ('Bonus', (4, 3)) -> ('PositiveUtility', (4, 3))
-R5: ('Dangerous', (3, 2)) -> ('Avoid', (3, 2))
-GOAL=Exit (4, 4)
-SEARCH=A*, found=True, expanded=12, planned_cost=7, search_seconds=0.000152717
-PLAN=[(2, 1), (2, 2), (1, 2), (1, 3), (1, 4), (2, 4), (3, 4), (4, 4)]
-ACTION=RIGHT
-REASON=Мэдэгдэж буй эрсдэлийн өртөг хамгийн бага замын эхний үйлдэл.
-AFTER ACTION=State(position=(2, 2), has_key=True, score=104, collected_coins=frozenset({(2, 1)}), visited_cells=frozenset({(4, 0), (2, 1), (2, 2), (2, 0), (3, 0)}), consumed=frozenset({(4, 0), (2, 1)}))
-OBSERVED=((2, 2), '.')
-ACTUAL COST=1
-
-STEP 7
-PERCEPT state=State(position=(2, 2), has_key=True, score=104, collected_coins=frozenset({(2, 1)}), visited_cells=frozenset({(4, 0), (2, 1), (2, 2), (2, 0), (3, 0)}), consumed=frozenset({(4, 0), (2, 1)}))
-Visible=[((0, 0), '.'), ((0, 1), '.'), ((0, 2), '.'), ((0, 3), '.'), ((0, 4), '.'), ((1, 0), 'W'), ((1, 1), '.'), ((1, 2), '.'), ((1, 3), '.'), ((1, 4), 'C'), ((2, 0), '.'), ((2, 1), '.'), ((2, 2), '.'), ((2, 3), 'W'), ((2, 4), '.'), ((3, 0), '.'), ((3, 1), 'W'), ((3, 2), 'T'), ((3, 3), '.'), ((3, 4), '.'), ((4, 0), '.'), ((4, 1), '?'), ((4, 2), 'W'), ((4, 3), 'B'), ((4, 4), 'E')]
-Observation=((2, 2), '.')
-NEW FACTS=[('At', (2, 2)), ('ObservedEmpty', (2, 2)), ('Visited', (2, 2))]
-RETRACTED FACTS=[('At', (2, 1)), ('Avoid', (3, 2)), ('Dangerous', (3, 2)), ('Goal', 'Exit'), ('NotTraversable', (1, 0)), ('NotTraversable', (2, 3)), ('NotTraversable', (3, 1)), ('NotTraversable', (4, 2)), ('ObservedCoin', (2, 1)), ('PositiveUtility', (1, 4)), ('PositiveUtility', (4, 3))]
-INFERENCE
-R2: ('HasKey', True) -> ('Goal', 'Exit')
-R3: ('Wall', (1, 0)) -> ('NotTraversable', (1, 0))
-R3: ('Wall', (2, 3)) -> ('NotTraversable', (2, 3))
-R3: ('Wall', (3, 1)) -> ('NotTraversable', (3, 1))
-R3: ('Wall', (4, 2)) -> ('NotTraversable', (4, 2))
-R4: ('Trap', (3, 2)) -> ('Dangerous', (3, 2))
-R6: ('Coin', (1, 4)) -> ('PositiveUtility', (1, 4))
-R7: ('Bonus', (4, 3)) -> ('PositiveUtility', (4, 3))
-R5: ('Dangerous', (3, 2)) -> ('Avoid', (3, 2))
-GOAL=Exit (4, 4)
-SEARCH=A*, found=True, expanded=7, planned_cost=6, search_seconds=0.000102252
-PLAN=[(2, 2), (1, 2), (1, 3), (1, 4), (2, 4), (3, 4), (4, 4)]
-ACTION=UP
-REASON=Мэдэгдэж буй эрсдэлийн өртөг хамгийн бага замын эхний үйлдэл.
-AFTER ACTION=State(position=(1, 2), has_key=True, score=103, collected_coins=frozenset({(2, 1)}), visited_cells=frozenset({(4, 0), (1, 2), (2, 1), (2, 2), (2, 0), (3, 0)}), consumed=frozenset({(4, 0), (2, 1)}))
-OBSERVED=((1, 2), '.')
-ACTUAL COST=1
-
-STEP 8
-PERCEPT state=State(position=(1, 2), has_key=True, score=103, collected_coins=frozenset({(2, 1)}), visited_cells=frozenset({(4, 0), (1, 2), (2, 1), (2, 2), (2, 0), (3, 0)}), consumed=frozenset({(4, 0), (2, 1)}))
-Visible=[((0, 0), '.'), ((0, 1), '.'), ((0, 2), '.'), ((0, 3), '.'), ((0, 4), '.'), ((1, 0), 'W'), ((1, 1), '.'), ((1, 2), '.'), ((1, 3), '.'), ((1, 4), 'C'), ((2, 0), '.'), ((2, 1), '.'), ((2, 2), '.'), ((2, 3), 'W'), ((2, 4), '.'), ((3, 0), '.'), ((3, 1), 'W'), ((3, 2), 'T'), ((3, 3), '.'), ((3, 4), '.'), ((4, 0), '.'), ((4, 1), '?'), ((4, 2), 'W'), ((4, 3), 'B'), ((4, 4), 'E')]
-Observation=((1, 2), '.')
-NEW FACTS=[('At', (1, 2)), ('ObservedEmpty', (1, 2)), ('Visited', (1, 2))]
-RETRACTED FACTS=[('At', (2, 2)), ('Avoid', (3, 2)), ('Dangerous', (3, 2)), ('Goal', 'Exit'), ('NotTraversable', (1, 0)), ('NotTraversable', (2, 3)), ('NotTraversable', (3, 1)), ('NotTraversable', (4, 2)), ('ObservedEmpty', (2, 2)), ('PositiveUtility', (1, 4)), ('PositiveUtility', (4, 3))]
-INFERENCE
-R2: ('HasKey', True) -> ('Goal', 'Exit')
-R3: ('Wall', (1, 0)) -> ('NotTraversable', (1, 0))
-R3: ('Wall', (2, 3)) -> ('NotTraversable', (2, 3))
-R3: ('Wall', (3, 1)) -> ('NotTraversable', (3, 1))
-R3: ('Wall', (4, 2)) -> ('NotTraversable', (4, 2))
-R4: ('Trap', (3, 2)) -> ('Dangerous', (3, 2))
-R6: ('Coin', (1, 4)) -> ('PositiveUtility', (1, 4))
-R7: ('Bonus', (4, 3)) -> ('PositiveUtility', (4, 3))
-R5: ('Dangerous', (3, 2)) -> ('Avoid', (3, 2))
-GOAL=Exit (4, 4)
-SEARCH=A*, found=True, expanded=6, planned_cost=5, search_seconds=0.000083263
-PLAN=[(1, 2), (1, 3), (1, 4), (2, 4), (3, 4), (4, 4)]
-ACTION=RIGHT
-REASON=Мэдэгдэж буй эрсдэлийн өртөг хамгийн бага замын эхний үйлдэл.
-AFTER ACTION=State(position=(1, 3), has_key=True, score=102, collected_coins=frozenset({(2, 1)}), visited_cells=frozenset({(1, 3), (4, 0), (1, 2), (2, 1), (2, 2), (2, 0), (3, 0)}), consumed=frozenset({(4, 0), (2, 1)}))
-OBSERVED=((1, 3), '.')
-ACTUAL COST=1
-
-STEP 9
-PERCEPT state=State(position=(1, 3), has_key=True, score=102, collected_coins=frozenset({(2, 1)}), visited_cells=frozenset({(1, 3), (4, 0), (1, 2), (2, 1), (2, 2), (2, 0), (3, 0)}), consumed=frozenset({(4, 0), (2, 1)}))
-Visible=[((0, 0), '.'), ((0, 1), '.'), ((0, 2), '.'), ((0, 3), '.'), ((0, 4), '.'), ((1, 0), 'W'), ((1, 1), '.'), ((1, 2), '.'), ((1, 3), '.'), ((1, 4), 'C'), ((2, 0), '.'), ((2, 1), '.'), ((2, 2), '.'), ((2, 3), 'W'), ((2, 4), '.'), ((3, 0), '.'), ((3, 1), 'W'), ((3, 2), 'T'), ((3, 3), '.'), ((3, 4), '.'), ((4, 0), '.'), ((4, 1), '?'), ((4, 2), 'W'), ((4, 3), 'B'), ((4, 4), 'E')]
-Observation=((1, 3), '.')
-NEW FACTS=[('At', (1, 3)), ('ObservedEmpty', (1, 3)), ('Visited', (1, 3))]
-RETRACTED FACTS=[('At', (1, 2)), ('Avoid', (3, 2)), ('Dangerous', (3, 2)), ('Goal', 'Exit'), ('NotTraversable', (1, 0)), ('NotTraversable', (2, 3)), ('NotTraversable', (3, 1)), ('NotTraversable', (4, 2)), ('ObservedEmpty', (1, 2)), ('PositiveUtility', (1, 4)), ('PositiveUtility', (4, 3))]
-INFERENCE
-R2: ('HasKey', True) -> ('Goal', 'Exit')
-R3: ('Wall', (1, 0)) -> ('NotTraversable', (1, 0))
-R3: ('Wall', (2, 3)) -> ('NotTraversable', (2, 3))
-R3: ('Wall', (3, 1)) -> ('NotTraversable', (3, 1))
-R3: ('Wall', (4, 2)) -> ('NotTraversable', (4, 2))
-R4: ('Trap', (3, 2)) -> ('Dangerous', (3, 2))
-R6: ('Coin', (1, 4)) -> ('PositiveUtility', (1, 4))
-R7: ('Bonus', (4, 3)) -> ('PositiveUtility', (4, 3))
-R5: ('Dangerous', (3, 2)) -> ('Avoid', (3, 2))
-GOAL=Exit (4, 4)
-SEARCH=A*, found=True, expanded=4, planned_cost=4, search_seconds=0.000057270
-PLAN=[(1, 3), (1, 4), (2, 4), (3, 4), (4, 4)]
-ACTION=RIGHT
-REASON=Мэдэгдэж буй эрсдэлийн өртөг хамгийн бага замын эхний үйлдэл.
-AFTER ACTION=State(position=(1, 4), has_key=True, score=111, collected_coins=frozenset({(2, 1), (1, 4)}), visited_cells=frozenset({(1, 3), (4, 0), (1, 2), (2, 1), (2, 2), (2, 0), (1, 4), (3, 0)}), consumed=frozenset({(4, 0), (2, 1), (1, 4)}))
-OBSERVED=((1, 4), 'C')
-ACTUAL COST=1
-
-STEP 10
-PERCEPT state=State(position=(1, 4), has_key=True, score=111, collected_coins=frozenset({(2, 1), (1, 4)}), visited_cells=frozenset({(1, 3), (4, 0), (1, 2), (2, 1), (2, 2), (2, 0), (1, 4), (3, 0)}), consumed=frozenset({(4, 0), (2, 1), (1, 4)}))
-Visible=[((0, 0), '.'), ((0, 1), '.'), ((0, 2), '.'), ((0, 3), '.'), ((0, 4), '.'), ((1, 0), 'W'), ((1, 1), '.'), ((1, 2), '.'), ((1, 3), '.'), ((1, 4), '.'), ((2, 0), '.'), ((2, 1), '.'), ((2, 2), '.'), ((2, 3), 'W'), ((2, 4), '.'), ((3, 0), '.'), ((3, 1), 'W'), ((3, 2), 'T'), ((3, 3), '.'), ((3, 4), '.'), ((4, 0), '.'), ((4, 1), '?'), ((4, 2), 'W'), ((4, 3), 'B'), ((4, 4), 'E')]
-Observation=((1, 4), 'C')
-NEW FACTS=[('At', (1, 4)), ('Empty', (1, 4)), ('ObservedCoin', (1, 4)), ('Visited', (1, 4))]
-RETRACTED FACTS=[('At', (1, 3)), ('Avoid', (3, 2)), ('Coin', (1, 4)), ('Dangerous', (3, 2)), ('Goal', 'Exit'), ('NotTraversable', (1, 0)), ('NotTraversable', (2, 3)), ('NotTraversable', (3, 1)), ('NotTraversable', (4, 2)), ('ObservedEmpty', (1, 3)), ('PositiveUtility', (1, 4)), ('PositiveUtility', (4, 3))]
-INFERENCE
-R2: ('HasKey', True) -> ('Goal', 'Exit')
-R3: ('Wall', (1, 0)) -> ('NotTraversable', (1, 0))
-R3: ('Wall', (2, 3)) -> ('NotTraversable', (2, 3))
-R3: ('Wall', (3, 1)) -> ('NotTraversable', (3, 1))
-R3: ('Wall', (4, 2)) -> ('NotTraversable', (4, 2))
-R4: ('Trap', (3, 2)) -> ('Dangerous', (3, 2))
-R7: ('Bonus', (4, 3)) -> ('PositiveUtility', (4, 3))
-R5: ('Dangerous', (3, 2)) -> ('Avoid', (3, 2))
-GOAL=Exit (4, 4)
-SEARCH=A*, found=True, expanded=3, planned_cost=3, search_seconds=0.000049228
-PLAN=[(1, 4), (2, 4), (3, 4), (4, 4)]
-ACTION=DOWN
-REASON=Мэдэгдэж буй эрсдэлийн өртөг хамгийн бага замын эхний үйлдэл.
-AFTER ACTION=State(position=(2, 4), has_key=True, score=110, collected_coins=frozenset({(2, 1), (1, 4)}), visited_cells=frozenset({(2, 4), (4, 0), (1, 2), (2, 1), (2, 0), (1, 4), (3, 0), (2, 2), (1, 3)}), consumed=frozenset({(4, 0), (2, 1), (1, 4)}))
+AFTER ACTION=State(position=(2, 4), has_key=True, score=97, collected_coins=frozenset(), visited_cells=frozenset({(4, 4), (5, 4), (3, 4), (2, 4)}), consumed=frozenset({(3, 4)}))
 OBSERVED=((2, 4), '.')
 ACTUAL COST=1
 
-STEP 11
-PERCEPT state=State(position=(2, 4), has_key=True, score=110, collected_coins=frozenset({(2, 1), (1, 4)}), visited_cells=frozenset({(2, 4), (4, 0), (1, 2), (2, 1), (2, 0), (1, 4), (3, 0), (2, 2), (1, 3)}), consumed=frozenset({(4, 0), (2, 1), (1, 4)}))
-Visible=[((0, 0), '.'), ((0, 1), '.'), ((0, 2), '.'), ((0, 3), '.'), ((0, 4), '.'), ((1, 0), 'W'), ((1, 1), '.'), ((1, 2), '.'), ((1, 3), '.'), ((1, 4), '.'), ((2, 0), '.'), ((2, 1), '.'), ((2, 2), '.'), ((2, 3), 'W'), ((2, 4), '.'), ((3, 0), '.'), ((3, 1), 'W'), ((3, 2), 'T'), ((3, 3), '.'), ((3, 4), '.'), ((4, 0), '.'), ((4, 1), '?'), ((4, 2), 'W'), ((4, 3), 'B'), ((4, 4), 'E')]
+STEP 4
+PERCEPT state=State(position=(2, 4), has_key=True, score=97, collected_coins=frozenset(), visited_cells=frozenset({(4, 4), (5, 4), (3, 4), (2, 4)}), consumed=frozenset({(3, 4)}))
+Visible=[((0, 0), '.'), ((0, 1), 'C'), ((0, 2), 'E'), ((0, 3), '.'), ((0, 4), '.'), ((0, 5), 'C'), ((1, 0), '.'), ((1, 1), '.'), ((1, 2), '.'), ((1, 3), 'T'), ((1, 4), 'W'), ((1, 5), 'W'), ((2, 0), '.'), ((2, 1), '.'), ((2, 2), '.'), ((2, 3), '.'), ((2, 4), '.'), ((2, 5), 'W'), ((3, 0), 'C'), ((3, 1), 'B'), ((3, 2), '.'), ((3, 3), '.'), ((3, 4), '.'), ((3, 5), 'W'), ((4, 0), '.'), ((4, 1), '.'), ((4, 2), '.'), ((4, 3), 'W'), ((4, 4), '.'), ((4, 5), '.'), ((5, 0), '?'), ((5, 1), '.'), ((5, 2), 'T'), ((5, 3), 'W'), ((5, 4), '.'), ((5, 5), '.')]
 Observation=((2, 4), '.')
 NEW FACTS=[('At', (2, 4)), ('ObservedEmpty', (2, 4)), ('Visited', (2, 4))]
-RETRACTED FACTS=[('At', (1, 4)), ('Avoid', (3, 2)), ('Dangerous', (3, 2)), ('Goal', 'Exit'), ('NotTraversable', (1, 0)), ('NotTraversable', (2, 3)), ('NotTraversable', (3, 1)), ('NotTraversable', (4, 2)), ('ObservedCoin', (1, 4)), ('PositiveUtility', (4, 3))]
+RETRACTED FACTS=[('At', (3, 4)), ('Avoid', (1, 3)), ('Avoid', (5, 2)), ('Dangerous', (1, 3)), ('Dangerous', (5, 2)), ('Goal', 'Exit'), ('NotTraversable', (1, 4)), ('NotTraversable', (1, 5)), ('NotTraversable', (2, 5)), ('NotTraversable', (3, 5)), ('NotTraversable', (4, 3)), ('NotTraversable', (5, 3)), ('ObservedKey', (3, 4)), ('PositiveUtility', (0, 1)), ('PositiveUtility', (0, 5)), ('PositiveUtility', (3, 0)), ('PositiveUtility', (3, 1))]
 INFERENCE
 R2: ('HasKey', True) -> ('Goal', 'Exit')
-R3: ('Wall', (1, 0)) -> ('NotTraversable', (1, 0))
-R3: ('Wall', (2, 3)) -> ('NotTraversable', (2, 3))
-R3: ('Wall', (3, 1)) -> ('NotTraversable', (3, 1))
-R3: ('Wall', (4, 2)) -> ('NotTraversable', (4, 2))
-R4: ('Trap', (3, 2)) -> ('Dangerous', (3, 2))
-R7: ('Bonus', (4, 3)) -> ('PositiveUtility', (4, 3))
-R5: ('Dangerous', (3, 2)) -> ('Avoid', (3, 2))
-GOAL=Exit (4, 4)
-SEARCH=A*, found=True, expanded=2, planned_cost=2, search_seconds=0.000033458
-PLAN=[(2, 4), (3, 4), (4, 4)]
-ACTION=DOWN
-REASON=Мэдэгдэж буй эрсдэлийн өртөг хамгийн бага замын эхний үйлдэл.
-AFTER ACTION=State(position=(3, 4), has_key=True, score=109, collected_coins=frozenset({(2, 1), (1, 4)}), visited_cells=frozenset({(2, 4), (4, 0), (1, 2), (2, 1), (3, 4), (2, 0), (1, 4), (3, 0), (2, 2), (1, 3)}), consumed=frozenset({(4, 0), (2, 1), (1, 4)}))
-OBSERVED=((3, 4), '.')
+R3: ('Wall', (1, 4)) -> ('NotTraversable', (1, 4))
+R3: ('Wall', (1, 5)) -> ('NotTraversable', (1, 5))
+R3: ('Wall', (2, 5)) -> ('NotTraversable', (2, 5))
+R3: ('Wall', (3, 5)) -> ('NotTraversable', (3, 5))
+R3: ('Wall', (4, 3)) -> ('NotTraversable', (4, 3))
+R3: ('Wall', (5, 3)) -> ('NotTraversable', (5, 3))
+R4: ('Trap', (1, 3)) -> ('Dangerous', (1, 3))
+R4: ('Trap', (5, 2)) -> ('Dangerous', (5, 2))
+R6: ('Coin', (0, 1)) -> ('PositiveUtility', (0, 1))
+R6: ('Coin', (0, 5)) -> ('PositiveUtility', (0, 5))
+R6: ('Coin', (3, 0)) -> ('PositiveUtility', (3, 0))
+R7: ('Bonus', (3, 1)) -> ('PositiveUtility', (3, 1))
+R5: ('Dangerous', (1, 3)) -> ('Avoid', (1, 3))
+R5: ('Dangerous', (5, 2)) -> ('Avoid', (5, 2))
+GOAL=Exit (0, 2)
+SEARCH=BFS, found=True, expanded=16, planned_cost=11, search_seconds=0.000151250
+PLAN=[(2, 4), (2, 3), (1, 3), (0, 3), (0, 2)]
+ACTION=LEFT
+REASON=Хамгийн цөөн алхамтай замын эхний үйлдэл.
+AFTER ACTION=State(position=(2, 3), has_key=True, score=96, collected_coins=frozenset(), visited_cells=frozenset({(4, 4), (2, 3), (2, 4), (3, 4), (5, 4)}), consumed=frozenset({(3, 4)}))
+OBSERVED=((2, 3), '.')
 ACTUAL COST=1
 
-STEP 12
-PERCEPT state=State(position=(3, 4), has_key=True, score=109, collected_coins=frozenset({(2, 1), (1, 4)}), visited_cells=frozenset({(2, 4), (4, 0), (1, 2), (2, 1), (3, 4), (2, 0), (1, 4), (3, 0), (2, 2), (1, 3)}), consumed=frozenset({(4, 0), (2, 1), (1, 4)}))
-Visible=[((0, 0), '.'), ((0, 1), '.'), ((0, 2), '.'), ((0, 3), '.'), ((0, 4), '.'), ((1, 0), 'W'), ((1, 1), '.'), ((1, 2), '.'), ((1, 3), '.'), ((1, 4), '.'), ((2, 0), '.'), ((2, 1), '.'), ((2, 2), '.'), ((2, 3), 'W'), ((2, 4), '.'), ((3, 0), '.'), ((3, 1), 'W'), ((3, 2), 'T'), ((3, 3), '.'), ((3, 4), '.'), ((4, 0), '.'), ((4, 1), '?'), ((4, 2), 'W'), ((4, 3), 'B'), ((4, 4), 'E')]
-Observation=((3, 4), '.')
-NEW FACTS=[('At', (3, 4)), ('ObservedEmpty', (3, 4)), ('Visited', (3, 4))]
-RETRACTED FACTS=[('At', (2, 4)), ('Avoid', (3, 2)), ('Dangerous', (3, 2)), ('Goal', 'Exit'), ('NotTraversable', (1, 0)), ('NotTraversable', (2, 3)), ('NotTraversable', (3, 1)), ('NotTraversable', (4, 2)), ('ObservedEmpty', (2, 4)), ('PositiveUtility', (4, 3))]
+STEP 5
+PERCEPT state=State(position=(2, 3), has_key=True, score=96, collected_coins=frozenset(), visited_cells=frozenset({(4, 4), (2, 3), (2, 4), (3, 4), (5, 4)}), consumed=frozenset({(3, 4)}))
+Visible=[((0, 0), '.'), ((0, 1), 'C'), ((0, 2), 'E'), ((0, 3), '.'), ((0, 4), '.'), ((0, 5), 'C'), ((1, 0), '.'), ((1, 1), '.'), ((1, 2), '.'), ((1, 3), 'T'), ((1, 4), 'W'), ((1, 5), 'W'), ((2, 0), '.'), ((2, 1), '.'), ((2, 2), '.'), ((2, 3), '.'), ((2, 4), '.'), ((2, 5), 'W'), ((3, 0), 'C'), ((3, 1), 'B'), ((3, 2), '.'), ((3, 3), '.'), ((3, 4), '.'), ((3, 5), 'W'), ((4, 0), '.'), ((4, 1), '.'), ((4, 2), '.'), ((4, 3), 'W'), ((4, 4), '.'), ((4, 5), '.'), ((5, 0), '?'), ((5, 1), '.'), ((5, 2), 'T'), ((5, 3), 'W'), ((5, 4), '.'), ((5, 5), '.')]
+Observation=((2, 3), '.')
+NEW FACTS=[('At', (2, 3)), ('ObservedEmpty', (2, 3)), ('Visited', (2, 3))]
+RETRACTED FACTS=[('At', (2, 4)), ('Avoid', (1, 3)), ('Avoid', (5, 2)), ('Dangerous', (1, 3)), ('Dangerous', (5, 2)), ('Goal', 'Exit'), ('NotTraversable', (1, 4)), ('NotTraversable', (1, 5)), ('NotTraversable', (2, 5)), ('NotTraversable', (3, 5)), ('NotTraversable', (4, 3)), ('NotTraversable', (5, 3)), ('ObservedEmpty', (2, 4)), ('PositiveUtility', (0, 1)), ('PositiveUtility', (0, 5)), ('PositiveUtility', (3, 0)), ('PositiveUtility', (3, 1))]
 INFERENCE
 R2: ('HasKey', True) -> ('Goal', 'Exit')
-R3: ('Wall', (1, 0)) -> ('NotTraversable', (1, 0))
-R3: ('Wall', (2, 3)) -> ('NotTraversable', (2, 3))
-R3: ('Wall', (3, 1)) -> ('NotTraversable', (3, 1))
-R3: ('Wall', (4, 2)) -> ('NotTraversable', (4, 2))
-R4: ('Trap', (3, 2)) -> ('Dangerous', (3, 2))
-R7: ('Bonus', (4, 3)) -> ('PositiveUtility', (4, 3))
-R5: ('Dangerous', (3, 2)) -> ('Avoid', (3, 2))
-GOAL=Exit (4, 4)
-SEARCH=A*, found=True, expanded=1, planned_cost=1, search_seconds=0.000022644
-PLAN=[(3, 4), (4, 4)]
-ACTION=DOWN
-REASON=Мэдэгдэж буй эрсдэлийн өртөг хамгийн бага замын эхний үйлдэл.
-AFTER ACTION=State(position=(4, 4), has_key=True, score=108, collected_coins=frozenset({(2, 1), (1, 4)}), visited_cells=frozenset({(4, 4), (2, 4), (4, 0), (1, 2), (2, 1), (3, 4), (2, 0), (1, 4), (3, 0), (2, 2), (1, 3)}), consumed=frozenset({(4, 0), (2, 1), (1, 4)}))
-OBSERVED=((4, 4), 'E')
-ACTUAL COST=1
-FINAL PERCEPT={'state': State(position=(4, 4), has_key=True, score=108, collected_coins=frozenset({(2, 1), (1, 4)}), visited_cells=frozenset({(4, 4), (2, 4), (4, 0), (1, 2), (2, 1), (3, 4), (2, 0), (1, 4), (3, 0), (2, 2), (1, 3)}), consumed=frozenset({(4, 0), (2, 1), (1, 4)})), 'visible': {(0, 0): '.', (0, 1): '.', (0, 2): '.', (0, 3): '.', (0, 4): '.', (1, 0): 'W', (1, 1): '.', (1, 2): '.', (1, 3): '.', (1, 4): '.', (2, 0): '.', (2, 1): '.', (2, 2): '.', (2, 3): 'W', (2, 4): '.', (3, 0): '.', (3, 1): 'W', (3, 2): 'T', (3, 3): '.', (3, 4): '.', (4, 0): '.', (4, 1): '?', (4, 2): 'W', (4, 3): 'B', (4, 4): 'E'}, 'last_observation': ((4, 4), 'E')}
-NEW FACTS=[('At', (4, 4)), ('ObservedExit', (4, 4)), ('Visited', (4, 4))]
-RETRACTED FACTS=[('At', (3, 4)), ('Avoid', (3, 2)), ('Dangerous', (3, 2)), ('Goal', 'Exit'), ('NotTraversable', (1, 0)), ('NotTraversable', (2, 3)), ('NotTraversable', (3, 1)), ('NotTraversable', (4, 2)), ('ObservedEmpty', (3, 4)), ('PositiveUtility', (4, 3))]
+R3: ('Wall', (1, 4)) -> ('NotTraversable', (1, 4))
+R3: ('Wall', (1, 5)) -> ('NotTraversable', (1, 5))
+R3: ('Wall', (2, 5)) -> ('NotTraversable', (2, 5))
+R3: ('Wall', (3, 5)) -> ('NotTraversable', (3, 5))
+R3: ('Wall', (4, 3)) -> ('NotTraversable', (4, 3))
+R3: ('Wall', (5, 3)) -> ('NotTraversable', (5, 3))
+R4: ('Trap', (1, 3)) -> ('Dangerous', (1, 3))
+R4: ('Trap', (5, 2)) -> ('Dangerous', (5, 2))
+R6: ('Coin', (0, 1)) -> ('PositiveUtility', (0, 1))
+R6: ('Coin', (0, 5)) -> ('PositiveUtility', (0, 5))
+R6: ('Coin', (3, 0)) -> ('PositiveUtility', (3, 0))
+R7: ('Bonus', (3, 1)) -> ('PositiveUtility', (3, 1))
+R5: ('Dangerous', (1, 3)) -> ('Avoid', (1, 3))
+R5: ('Dangerous', (5, 2)) -> ('Avoid', (5, 2))
+GOAL=Exit (0, 2)
+SEARCH=BFS, found=True, expanded=10, planned_cost=10, search_seconds=0.000101693
+PLAN=[(2, 3), (1, 3), (0, 3), (0, 2)]
+ACTION=UP
+REASON=Хамгийн цөөн алхамтай замын эхний үйлдэл.
+AFTER ACTION=State(position=(1, 3), has_key=True, score=80, collected_coins=frozenset(), visited_cells=frozenset({(4, 4), (2, 3), (2, 4), (3, 4), (5, 4), (1, 3)}), consumed=frozenset({(3, 4)}))
+OBSERVED=((1, 3), 'T')
+ACTUAL COST=8
+
+STEP 6
+PERCEPT state=State(position=(1, 3), has_key=True, score=80, collected_coins=frozenset(), visited_cells=frozenset({(4, 4), (2, 3), (2, 4), (3, 4), (5, 4), (1, 3)}), consumed=frozenset({(3, 4)}))
+Visible=[((0, 0), '.'), ((0, 1), 'C'), ((0, 2), 'E'), ((0, 3), '.'), ((0, 4), '.'), ((0, 5), 'C'), ((1, 0), '.'), ((1, 1), '.'), ((1, 2), '.'), ((1, 3), 'T'), ((1, 4), 'W'), ((1, 5), 'W'), ((2, 0), '.'), ((2, 1), '.'), ((2, 2), '.'), ((2, 3), '.'), ((2, 4), '.'), ((2, 5), 'W'), ((3, 0), 'C'), ((3, 1), 'B'), ((3, 2), '.'), ((3, 3), '.'), ((3, 4), '.'), ((3, 5), 'W'), ((4, 0), '.'), ((4, 1), '.'), ((4, 2), '.'), ((4, 3), 'W'), ((4, 4), '.'), ((4, 5), '.'), ((5, 0), '?'), ((5, 1), '.'), ((5, 2), 'T'), ((5, 3), 'W'), ((5, 4), '.'), ((5, 5), '.')]
+Observation=((1, 3), 'T')
+NEW FACTS=[('At', (1, 3)), ('ObservedTrap', (1, 3)), ('Visited', (1, 3))]
+RETRACTED FACTS=[('At', (2, 3)), ('Avoid', (1, 3)), ('Avoid', (5, 2)), ('Dangerous', (1, 3)), ('Dangerous', (5, 2)), ('Goal', 'Exit'), ('NotTraversable', (1, 4)), ('NotTraversable', (1, 5)), ('NotTraversable', (2, 5)), ('NotTraversable', (3, 5)), ('NotTraversable', (4, 3)), ('NotTraversable', (5, 3)), ('ObservedEmpty', (2, 3)), ('PositiveUtility', (0, 1)), ('PositiveUtility', (0, 5)), ('PositiveUtility', (3, 0)), ('PositiveUtility', (3, 1))]
+INFERENCE
 R2: ('HasKey', True) -> ('Goal', 'Exit')
-R3: ('Wall', (1, 0)) -> ('NotTraversable', (1, 0))
-R3: ('Wall', (2, 3)) -> ('NotTraversable', (2, 3))
-R3: ('Wall', (3, 1)) -> ('NotTraversable', (3, 1))
-R3: ('Wall', (4, 2)) -> ('NotTraversable', (4, 2))
-R4: ('Trap', (3, 2)) -> ('Dangerous', (3, 2))
-R7: ('Bonus', (4, 3)) -> ('PositiveUtility', (4, 3))
-R5: ('Dangerous', (3, 2)) -> ('Avoid', (3, 2))
-RESULT={"algorithm": "A*", "path_length": 12, "expanded_nodes": 74, "total_path_cost": 12, "search_seconds": 0.0010613819995342055, "execution_seconds": 0.011002598999766633, "goal_reached": true, "score": 108, "coins": 2, "traps": 0, "unique_cells": 11, "searches": 12, "status": "REACHED"}
+R3: ('Wall', (1, 4)) -> ('NotTraversable', (1, 4))
+R3: ('Wall', (1, 5)) -> ('NotTraversable', (1, 5))
+R3: ('Wall', (2, 5)) -> ('NotTraversable', (2, 5))
+R3: ('Wall', (3, 5)) -> ('NotTraversable', (3, 5))
+R3: ('Wall', (4, 3)) -> ('NotTraversable', (4, 3))
+R3: ('Wall', (5, 3)) -> ('NotTraversable', (5, 3))
+R4: ('Trap', (1, 3)) -> ('Dangerous', (1, 3))
+R4: ('Trap', (5, 2)) -> ('Dangerous', (5, 2))
+R6: ('Coin', (0, 1)) -> ('PositiveUtility', (0, 1))
+R6: ('Coin', (0, 5)) -> ('PositiveUtility', (0, 5))
+R6: ('Coin', (3, 0)) -> ('PositiveUtility', (3, 0))
+R7: ('Bonus', (3, 1)) -> ('PositiveUtility', (3, 1))
+R5: ('Dangerous', (1, 3)) -> ('Avoid', (1, 3))
+R5: ('Dangerous', (5, 2)) -> ('Avoid', (5, 2))
+GOAL=Exit (0, 2)
+SEARCH=BFS, found=True, expanded=4, planned_cost=2, search_seconds=0.000047117
+PLAN=[(1, 3), (0, 3), (0, 2)]
+ACTION=UP
+REASON=Хамгийн цөөн алхамтай замын эхний үйлдэл.
+AFTER ACTION=State(position=(0, 3), has_key=True, score=79, collected_coins=frozenset(), visited_cells=frozenset({(4, 4), (2, 3), (2, 4), (3, 4), (5, 4), (0, 3), (1, 3)}), consumed=frozenset({(3, 4)}))
+OBSERVED=((0, 3), '.')
+ACTUAL COST=1
+
+STEP 7
+PERCEPT state=State(position=(0, 3), has_key=True, score=79, collected_coins=frozenset(), visited_cells=frozenset({(4, 4), (2, 3), (2, 4), (3, 4), (5, 4), (0, 3), (1, 3)}), consumed=frozenset({(3, 4)}))
+Visible=[((0, 0), '.'), ((0, 1), 'C'), ((0, 2), 'E'), ((0, 3), '.'), ((0, 4), '.'), ((0, 5), 'C'), ((1, 0), '.'), ((1, 1), '.'), ((1, 2), '.'), ((1, 3), 'T'), ((1, 4), 'W'), ((1, 5), 'W'), ((2, 0), '.'), ((2, 1), '.'), ((2, 2), '.'), ((2, 3), '.'), ((2, 4), '.'), ((2, 5), 'W'), ((3, 0), 'C'), ((3, 1), 'B'), ((3, 2), '.'), ((3, 3), '.'), ((3, 4), '.'), ((3, 5), 'W'), ((4, 0), '.'), ((4, 1), '.'), ((4, 2), '.'), ((4, 3), 'W'), ((4, 4), '.'), ((4, 5), '.'), ((5, 0), '?'), ((5, 1), '.'), ((5, 2), 'T'), ((5, 3), 'W'), ((5, 4), '.'), ((5, 5), '.')]
+Observation=((0, 3), '.')
+NEW FACTS=[('At', (0, 3)), ('ObservedEmpty', (0, 3)), ('Visited', (0, 3))]
+RETRACTED FACTS=[('At', (1, 3)), ('Avoid', (1, 3)), ('Avoid', (5, 2)), ('Dangerous', (1, 3)), ('Dangerous', (5, 2)), ('Goal', 'Exit'), ('NotTraversable', (1, 4)), ('NotTraversable', (1, 5)), ('NotTraversable', (2, 5)), ('NotTraversable', (3, 5)), ('NotTraversable', (4, 3)), ('NotTraversable', (5, 3)), ('ObservedTrap', (1, 3)), ('PositiveUtility', (0, 1)), ('PositiveUtility', (0, 5)), ('PositiveUtility', (3, 0)), ('PositiveUtility', (3, 1))]
+INFERENCE
+R2: ('HasKey', True) -> ('Goal', 'Exit')
+R3: ('Wall', (1, 4)) -> ('NotTraversable', (1, 4))
+R3: ('Wall', (1, 5)) -> ('NotTraversable', (1, 5))
+R3: ('Wall', (2, 5)) -> ('NotTraversable', (2, 5))
+R3: ('Wall', (3, 5)) -> ('NotTraversable', (3, 5))
+R3: ('Wall', (4, 3)) -> ('NotTraversable', (4, 3))
+R3: ('Wall', (5, 3)) -> ('NotTraversable', (5, 3))
+R4: ('Trap', (1, 3)) -> ('Dangerous', (1, 3))
+R4: ('Trap', (5, 2)) -> ('Dangerous', (5, 2))
+R6: ('Coin', (0, 1)) -> ('PositiveUtility', (0, 1))
+R6: ('Coin', (0, 5)) -> ('PositiveUtility', (0, 5))
+R6: ('Coin', (3, 0)) -> ('PositiveUtility', (3, 0))
+R7: ('Bonus', (3, 1)) -> ('PositiveUtility', (3, 1))
+R5: ('Dangerous', (1, 3)) -> ('Avoid', (1, 3))
+R5: ('Dangerous', (5, 2)) -> ('Avoid', (5, 2))
+GOAL=Exit (0, 2)
+SEARCH=BFS, found=True, expanded=2, planned_cost=1, search_seconds=0.000024537
+PLAN=[(0, 3), (0, 2)]
+ACTION=LEFT
+REASON=Хамгийн цөөн алхамтай замын эхний үйлдэл.
+AFTER ACTION=State(position=(0, 2), has_key=True, score=78, collected_coins=frozenset(), visited_cells=frozenset({(4, 4), (2, 3), (2, 4), (0, 2), (3, 4), (5, 4), (0, 3), (1, 3)}), consumed=frozenset({(3, 4)}))
+OBSERVED=((0, 2), 'E')
+ACTUAL COST=1
+FINAL PERCEPT={'state': State(position=(0, 2), has_key=True, score=78, collected_coins=frozenset(), visited_cells=frozenset({(4, 4), (2, 3), (2, 4), (0, 2), (3, 4), (5, 4), (0, 3), (1, 3)}), consumed=frozenset({(3, 4)})), 'visible': {(0, 0): '.', (0, 1): 'C', (0, 2): 'E', (0, 3): '.', (0, 4): '.', (0, 5): 'C', (1, 0): '.', (1, 1): '.', (1, 2): '.', (1, 3): 'T', (1, 4): 'W', (1, 5): 'W', (2, 0): '.', (2, 1): '.', (2, 2): '.', (2, 3): '.', (2, 4): '.', (2, 5): 'W', (3, 0): 'C', (3, 1): 'B', (3, 2): '.', (3, 3): '.', (3, 4): '.', (3, 5): 'W', (4, 0): '.', (4, 1): '.', (4, 2): '.', (4, 3): 'W', (4, 4): '.', (4, 5): '.', (5, 0): '?', (5, 1): '.', (5, 2): 'T', (5, 3): 'W', (5, 4): '.', (5, 5): '.'}, 'last_observation': ((0, 2), 'E')}
+NEW FACTS=[('At', (0, 2)), ('ObservedExit', (0, 2)), ('Visited', (0, 2))]
+RETRACTED FACTS=[('At', (0, 3)), ('Avoid', (1, 3)), ('Avoid', (5, 2)), ('Dangerous', (1, 3)), ('Dangerous', (5, 2)), ('Goal', 'Exit'), ('NotTraversable', (1, 4)), ('NotTraversable', (1, 5)), ('NotTraversable', (2, 5)), ('NotTraversable', (3, 5)), ('NotTraversable', (4, 3)), ('NotTraversable', (5, 3)), ('ObservedEmpty', (0, 3)), ('PositiveUtility', (0, 1)), ('PositiveUtility', (0, 5)), ('PositiveUtility', (3, 0)), ('PositiveUtility', (3, 1))]
+R2: ('HasKey', True) -> ('Goal', 'Exit')
+R3: ('Wall', (1, 4)) -> ('NotTraversable', (1, 4))
+R3: ('Wall', (1, 5)) -> ('NotTraversable', (1, 5))
+R3: ('Wall', (2, 5)) -> ('NotTraversable', (2, 5))
+R3: ('Wall', (3, 5)) -> ('NotTraversable', (3, 5))
+R3: ('Wall', (4, 3)) -> ('NotTraversable', (4, 3))
+R3: ('Wall', (5, 3)) -> ('NotTraversable', (5, 3))
+R4: ('Trap', (1, 3)) -> ('Dangerous', (1, 3))
+R4: ('Trap', (5, 2)) -> ('Dangerous', (5, 2))
+R6: ('Coin', (0, 1)) -> ('PositiveUtility', (0, 1))
+R6: ('Coin', (0, 5)) -> ('PositiveUtility', (0, 5))
+R6: ('Coin', (3, 0)) -> ('PositiveUtility', (3, 0))
+R7: ('Bonus', (3, 1)) -> ('PositiveUtility', (3, 1))
+R5: ('Dangerous', (1, 3)) -> ('Avoid', (1, 3))
+R5: ('Dangerous', (5, 2)) -> ('Avoid', (5, 2))
+RESULT={"algorithm": "BFS", "path_length": 7, "expanded_nodes": 55, "total_path_cost": 14, "search_seconds": 0.0005739079997510999, "execution_seconds": 0.00669072599998799, "goal_reached": true, "score": 78, "coins": 0, "traps": 1, "unique_cells": 8, "searches": 7, "status": "REACHED"}
+
+ALGORITHM=A*
+INITIAL BOARD
+. C E . . C
+. . . T W W
+. . . . . W
+C B . . K W
+. . . W . .
+? . T W A .
+
+STEP 1
+PERCEPT state=State(position=(5, 4), has_key=False, score=100, collected_coins=frozenset(), visited_cells=frozenset({(5, 4)}), consumed=frozenset())
+Visible=[((0, 0), '.'), ((0, 1), 'C'), ((0, 2), 'E'), ((0, 3), '.'), ((0, 4), '.'), ((0, 5), 'C'), ((1, 0), '.'), ((1, 1), '.'), ((1, 2), '.'), ((1, 3), 'T'), ((1, 4), 'W'), ((1, 5), 'W'), ((2, 0), '.'), ((2, 1), '.'), ((2, 2), '.'), ((2, 3), '.'), ((2, 4), '.'), ((2, 5), 'W'), ((3, 0), 'C'), ((3, 1), 'B'), ((3, 2), '.'), ((3, 3), '.'), ((3, 4), 'K'), ((3, 5), 'W'), ((4, 0), '.'), ((4, 1), '.'), ((4, 2), '.'), ((4, 3), 'W'), ((4, 4), '.'), ((4, 5), '.'), ((5, 0), '?'), ((5, 1), '.'), ((5, 2), 'T'), ((5, 3), 'W'), ((5, 4), '.'), ((5, 5), '.')]
+Observation=None
+NEW FACTS=[('At', (5, 4)), ('Bonus', (3, 1)), ('Coin', (0, 1)), ('Coin', (0, 5)), ('Coin', (3, 0)), ('Empty', (0, 0)), ('Empty', (0, 3)), ('Empty', (0, 4)), ('Empty', (1, 0)), ('Empty', (1, 1)), ('Empty', (1, 2)), ('Empty', (2, 0)), ('Empty', (2, 1)), ('Empty', (2, 2)), ('Empty', (2, 3)), ('Empty', (2, 4)), ('Empty', (3, 2)), ('Empty', (3, 3)), ('Empty', (4, 0)), ('Empty', (4, 1)), ('Empty', (4, 2)), ('Empty', (4, 4)), ('Empty', (4, 5)), ('Empty', (5, 1)), ('Empty', (5, 4)), ('Empty', (5, 5)), ('Exit', (0, 2)), ('HasKey', False), ('Key', (3, 4)), ('Trap', (1, 3)), ('Trap', (5, 2)), ('Unknown', (5, 0)), ('Visited', (5, 4)), ('Wall', (1, 4)), ('Wall', (1, 5)), ('Wall', (2, 5)), ('Wall', (3, 5)), ('Wall', (4, 3)), ('Wall', (5, 3))]
+RETRACTED FACTS=[]
+INFERENCE
+R1: ('HasKey', False) -> ('Goal', 'Key')
+R3: ('Wall', (1, 4)) -> ('NotTraversable', (1, 4))
+R3: ('Wall', (1, 5)) -> ('NotTraversable', (1, 5))
+R3: ('Wall', (2, 5)) -> ('NotTraversable', (2, 5))
+R3: ('Wall', (3, 5)) -> ('NotTraversable', (3, 5))
+R3: ('Wall', (4, 3)) -> ('NotTraversable', (4, 3))
+R3: ('Wall', (5, 3)) -> ('NotTraversable', (5, 3))
+R4: ('Trap', (1, 3)) -> ('Dangerous', (1, 3))
+R4: ('Trap', (5, 2)) -> ('Dangerous', (5, 2))
+R6: ('Coin', (0, 1)) -> ('PositiveUtility', (0, 1))
+R6: ('Coin', (0, 5)) -> ('PositiveUtility', (0, 5))
+R6: ('Coin', (3, 0)) -> ('PositiveUtility', (3, 0))
+R7: ('Bonus', (3, 1)) -> ('PositiveUtility', (3, 1))
+R5: ('Dangerous', (1, 3)) -> ('Avoid', (1, 3))
+R5: ('Dangerous', (5, 2)) -> ('Avoid', (5, 2))
+GOAL=Key (3, 4)
+SEARCH=A*, found=True, expanded=2, planned_cost=2, search_seconds=0.000050088
+PLAN=[(5, 4), (4, 4), (3, 4)]
+ACTION=UP
+REASON=Мэдэгдэж буй эрсдэлийн өртөг хамгийн бага замын эхний үйлдэл.
+AFTER ACTION=State(position=(4, 4), has_key=False, score=99, collected_coins=frozenset(), visited_cells=frozenset({(4, 4), (5, 4)}), consumed=frozenset())
+OBSERVED=((4, 4), '.')
+ACTUAL COST=1
+
+STEP 2
+PERCEPT state=State(position=(4, 4), has_key=False, score=99, collected_coins=frozenset(), visited_cells=frozenset({(4, 4), (5, 4)}), consumed=frozenset())
+Visible=[((0, 0), '.'), ((0, 1), 'C'), ((0, 2), 'E'), ((0, 3), '.'), ((0, 4), '.'), ((0, 5), 'C'), ((1, 0), '.'), ((1, 1), '.'), ((1, 2), '.'), ((1, 3), 'T'), ((1, 4), 'W'), ((1, 5), 'W'), ((2, 0), '.'), ((2, 1), '.'), ((2, 2), '.'), ((2, 3), '.'), ((2, 4), '.'), ((2, 5), 'W'), ((3, 0), 'C'), ((3, 1), 'B'), ((3, 2), '.'), ((3, 3), '.'), ((3, 4), 'K'), ((3, 5), 'W'), ((4, 0), '.'), ((4, 1), '.'), ((4, 2), '.'), ((4, 3), 'W'), ((4, 4), '.'), ((4, 5), '.'), ((5, 0), '?'), ((5, 1), '.'), ((5, 2), 'T'), ((5, 3), 'W'), ((5, 4), '.'), ((5, 5), '.')]
+Observation=((4, 4), '.')
+NEW FACTS=[('At', (4, 4)), ('ObservedEmpty', (4, 4)), ('Visited', (4, 4))]
+RETRACTED FACTS=[('At', (5, 4)), ('Avoid', (1, 3)), ('Avoid', (5, 2)), ('Dangerous', (1, 3)), ('Dangerous', (5, 2)), ('Goal', 'Key'), ('NotTraversable', (1, 4)), ('NotTraversable', (1, 5)), ('NotTraversable', (2, 5)), ('NotTraversable', (3, 5)), ('NotTraversable', (4, 3)), ('NotTraversable', (5, 3)), ('PositiveUtility', (0, 1)), ('PositiveUtility', (0, 5)), ('PositiveUtility', (3, 0)), ('PositiveUtility', (3, 1))]
+INFERENCE
+R1: ('HasKey', False) -> ('Goal', 'Key')
+R3: ('Wall', (1, 4)) -> ('NotTraversable', (1, 4))
+R3: ('Wall', (1, 5)) -> ('NotTraversable', (1, 5))
+R3: ('Wall', (2, 5)) -> ('NotTraversable', (2, 5))
+R3: ('Wall', (3, 5)) -> ('NotTraversable', (3, 5))
+R3: ('Wall', (4, 3)) -> ('NotTraversable', (4, 3))
+R3: ('Wall', (5, 3)) -> ('NotTraversable', (5, 3))
+R4: ('Trap', (1, 3)) -> ('Dangerous', (1, 3))
+R4: ('Trap', (5, 2)) -> ('Dangerous', (5, 2))
+R6: ('Coin', (0, 1)) -> ('PositiveUtility', (0, 1))
+R6: ('Coin', (0, 5)) -> ('PositiveUtility', (0, 5))
+R6: ('Coin', (3, 0)) -> ('PositiveUtility', (3, 0))
+R7: ('Bonus', (3, 1)) -> ('PositiveUtility', (3, 1))
+R5: ('Dangerous', (1, 3)) -> ('Avoid', (1, 3))
+R5: ('Dangerous', (5, 2)) -> ('Avoid', (5, 2))
+GOAL=Key (3, 4)
+SEARCH=A*, found=True, expanded=1, planned_cost=1, search_seconds=0.000019837
+PLAN=[(4, 4), (3, 4)]
+ACTION=UP
+REASON=Мэдэгдэж буй эрсдэлийн өртөг хамгийн бага замын эхний үйлдэл.
+AFTER ACTION=State(position=(3, 4), has_key=True, score=98, collected_coins=frozenset(), visited_cells=frozenset({(4, 4), (5, 4), (3, 4)}), consumed=frozenset({(3, 4)}))
+OBSERVED=((3, 4), 'K')
+ACTUAL COST=1
+
+STEP 3
+PERCEPT state=State(position=(3, 4), has_key=True, score=98, collected_coins=frozenset(), visited_cells=frozenset({(4, 4), (5, 4), (3, 4)}), consumed=frozenset({(3, 4)}))
+Visible=[((0, 0), '.'), ((0, 1), 'C'), ((0, 2), 'E'), ((0, 3), '.'), ((0, 4), '.'), ((0, 5), 'C'), ((1, 0), '.'), ((1, 1), '.'), ((1, 2), '.'), ((1, 3), 'T'), ((1, 4), 'W'), ((1, 5), 'W'), ((2, 0), '.'), ((2, 1), '.'), ((2, 2), '.'), ((2, 3), '.'), ((2, 4), '.'), ((2, 5), 'W'), ((3, 0), 'C'), ((3, 1), 'B'), ((3, 2), '.'), ((3, 3), '.'), ((3, 4), '.'), ((3, 5), 'W'), ((4, 0), '.'), ((4, 1), '.'), ((4, 2), '.'), ((4, 3), 'W'), ((4, 4), '.'), ((4, 5), '.'), ((5, 0), '?'), ((5, 1), '.'), ((5, 2), 'T'), ((5, 3), 'W'), ((5, 4), '.'), ((5, 5), '.')]
+Observation=((3, 4), 'K')
+NEW FACTS=[('At', (3, 4)), ('Empty', (3, 4)), ('HasKey', True), ('ObservedKey', (3, 4)), ('Visited', (3, 4))]
+RETRACTED FACTS=[('At', (4, 4)), ('Avoid', (1, 3)), ('Avoid', (5, 2)), ('Dangerous', (1, 3)), ('Dangerous', (5, 2)), ('Goal', 'Key'), ('HasKey', False), ('Key', (3, 4)), ('NotTraversable', (1, 4)), ('NotTraversable', (1, 5)), ('NotTraversable', (2, 5)), ('NotTraversable', (3, 5)), ('NotTraversable', (4, 3)), ('NotTraversable', (5, 3)), ('ObservedEmpty', (4, 4)), ('PositiveUtility', (0, 1)), ('PositiveUtility', (0, 5)), ('PositiveUtility', (3, 0)), ('PositiveUtility', (3, 1))]
+INFERENCE
+R2: ('HasKey', True) -> ('Goal', 'Exit')
+R3: ('Wall', (1, 4)) -> ('NotTraversable', (1, 4))
+R3: ('Wall', (1, 5)) -> ('NotTraversable', (1, 5))
+R3: ('Wall', (2, 5)) -> ('NotTraversable', (2, 5))
+R3: ('Wall', (3, 5)) -> ('NotTraversable', (3, 5))
+R3: ('Wall', (4, 3)) -> ('NotTraversable', (4, 3))
+R3: ('Wall', (5, 3)) -> ('NotTraversable', (5, 3))
+R4: ('Trap', (1, 3)) -> ('Dangerous', (1, 3))
+R4: ('Trap', (5, 2)) -> ('Dangerous', (5, 2))
+R6: ('Coin', (0, 1)) -> ('PositiveUtility', (0, 1))
+R6: ('Coin', (0, 5)) -> ('PositiveUtility', (0, 5))
+R6: ('Coin', (3, 0)) -> ('PositiveUtility', (3, 0))
+R7: ('Bonus', (3, 1)) -> ('PositiveUtility', (3, 1))
+R5: ('Dangerous', (1, 3)) -> ('Avoid', (1, 3))
+R5: ('Dangerous', (5, 2)) -> ('Avoid', (5, 2))
+GOAL=Exit (0, 2)
+SEARCH=A*, found=True, expanded=7, planned_cost=5, search_seconds=0.000083959
+PLAN=[(3, 4), (2, 4), (2, 3), (2, 2), (1, 2), (0, 2)]
+ACTION=UP
+REASON=Мэдэгдэж буй эрсдэлийн өртөг хамгийн бага замын эхний үйлдэл.
+AFTER ACTION=State(position=(2, 4), has_key=True, score=97, collected_coins=frozenset(), visited_cells=frozenset({(4, 4), (5, 4), (3, 4), (2, 4)}), consumed=frozenset({(3, 4)}))
+OBSERVED=((2, 4), '.')
+ACTUAL COST=1
+
+STEP 4
+PERCEPT state=State(position=(2, 4), has_key=True, score=97, collected_coins=frozenset(), visited_cells=frozenset({(4, 4), (5, 4), (3, 4), (2, 4)}), consumed=frozenset({(3, 4)}))
+Visible=[((0, 0), '.'), ((0, 1), 'C'), ((0, 2), 'E'), ((0, 3), '.'), ((0, 4), '.'), ((0, 5), 'C'), ((1, 0), '.'), ((1, 1), '.'), ((1, 2), '.'), ((1, 3), 'T'), ((1, 4), 'W'), ((1, 5), 'W'), ((2, 0), '.'), ((2, 1), '.'), ((2, 2), '.'), ((2, 3), '.'), ((2, 4), '.'), ((2, 5), 'W'), ((3, 0), 'C'), ((3, 1), 'B'), ((3, 2), '.'), ((3, 3), '.'), ((3, 4), '.'), ((3, 5), 'W'), ((4, 0), '.'), ((4, 1), '.'), ((4, 2), '.'), ((4, 3), 'W'), ((4, 4), '.'), ((4, 5), '.'), ((5, 0), '?'), ((5, 1), '.'), ((5, 2), 'T'), ((5, 3), 'W'), ((5, 4), '.'), ((5, 5), '.')]
+Observation=((2, 4), '.')
+NEW FACTS=[('At', (2, 4)), ('ObservedEmpty', (2, 4)), ('Visited', (2, 4))]
+RETRACTED FACTS=[('At', (3, 4)), ('Avoid', (1, 3)), ('Avoid', (5, 2)), ('Dangerous', (1, 3)), ('Dangerous', (5, 2)), ('Goal', 'Exit'), ('NotTraversable', (1, 4)), ('NotTraversable', (1, 5)), ('NotTraversable', (2, 5)), ('NotTraversable', (3, 5)), ('NotTraversable', (4, 3)), ('NotTraversable', (5, 3)), ('ObservedKey', (3, 4)), ('PositiveUtility', (0, 1)), ('PositiveUtility', (0, 5)), ('PositiveUtility', (3, 0)), ('PositiveUtility', (3, 1))]
+INFERENCE
+R2: ('HasKey', True) -> ('Goal', 'Exit')
+R3: ('Wall', (1, 4)) -> ('NotTraversable', (1, 4))
+R3: ('Wall', (1, 5)) -> ('NotTraversable', (1, 5))
+R3: ('Wall', (2, 5)) -> ('NotTraversable', (2, 5))
+R3: ('Wall', (3, 5)) -> ('NotTraversable', (3, 5))
+R3: ('Wall', (4, 3)) -> ('NotTraversable', (4, 3))
+R3: ('Wall', (5, 3)) -> ('NotTraversable', (5, 3))
+R4: ('Trap', (1, 3)) -> ('Dangerous', (1, 3))
+R4: ('Trap', (5, 2)) -> ('Dangerous', (5, 2))
+R6: ('Coin', (0, 1)) -> ('PositiveUtility', (0, 1))
+R6: ('Coin', (0, 5)) -> ('PositiveUtility', (0, 5))
+R6: ('Coin', (3, 0)) -> ('PositiveUtility', (3, 0))
+R7: ('Bonus', (3, 1)) -> ('PositiveUtility', (3, 1))
+R5: ('Dangerous', (1, 3)) -> ('Avoid', (1, 3))
+R5: ('Dangerous', (5, 2)) -> ('Avoid', (5, 2))
+GOAL=Exit (0, 2)
+SEARCH=A*, found=True, expanded=4, planned_cost=4, search_seconds=0.000053822
+PLAN=[(2, 4), (2, 3), (2, 2), (1, 2), (0, 2)]
+ACTION=LEFT
+REASON=Мэдэгдэж буй эрсдэлийн өртөг хамгийн бага замын эхний үйлдэл.
+AFTER ACTION=State(position=(2, 3), has_key=True, score=96, collected_coins=frozenset(), visited_cells=frozenset({(4, 4), (2, 3), (2, 4), (3, 4), (5, 4)}), consumed=frozenset({(3, 4)}))
+OBSERVED=((2, 3), '.')
+ACTUAL COST=1
+
+STEP 5
+PERCEPT state=State(position=(2, 3), has_key=True, score=96, collected_coins=frozenset(), visited_cells=frozenset({(4, 4), (2, 3), (2, 4), (3, 4), (5, 4)}), consumed=frozenset({(3, 4)}))
+Visible=[((0, 0), '.'), ((0, 1), 'C'), ((0, 2), 'E'), ((0, 3), '.'), ((0, 4), '.'), ((0, 5), 'C'), ((1, 0), '.'), ((1, 1), '.'), ((1, 2), '.'), ((1, 3), 'T'), ((1, 4), 'W'), ((1, 5), 'W'), ((2, 0), '.'), ((2, 1), '.'), ((2, 2), '.'), ((2, 3), '.'), ((2, 4), '.'), ((2, 5), 'W'), ((3, 0), 'C'), ((3, 1), 'B'), ((3, 2), '.'), ((3, 3), '.'), ((3, 4), '.'), ((3, 5), 'W'), ((4, 0), '.'), ((4, 1), '.'), ((4, 2), '.'), ((4, 3), 'W'), ((4, 4), '.'), ((4, 5), '.'), ((5, 0), '?'), ((5, 1), '.'), ((5, 2), 'T'), ((5, 3), 'W'), ((5, 4), '.'), ((5, 5), '.')]
+Observation=((2, 3), '.')
+NEW FACTS=[('At', (2, 3)), ('ObservedEmpty', (2, 3)), ('Visited', (2, 3))]
+RETRACTED FACTS=[('At', (2, 4)), ('Avoid', (1, 3)), ('Avoid', (5, 2)), ('Dangerous', (1, 3)), ('Dangerous', (5, 2)), ('Goal', 'Exit'), ('NotTraversable', (1, 4)), ('NotTraversable', (1, 5)), ('NotTraversable', (2, 5)), ('NotTraversable', (3, 5)), ('NotTraversable', (4, 3)), ('NotTraversable', (5, 3)), ('ObservedEmpty', (2, 4)), ('PositiveUtility', (0, 1)), ('PositiveUtility', (0, 5)), ('PositiveUtility', (3, 0)), ('PositiveUtility', (3, 1))]
+INFERENCE
+R2: ('HasKey', True) -> ('Goal', 'Exit')
+R3: ('Wall', (1, 4)) -> ('NotTraversable', (1, 4))
+R3: ('Wall', (1, 5)) -> ('NotTraversable', (1, 5))
+R3: ('Wall', (2, 5)) -> ('NotTraversable', (2, 5))
+R3: ('Wall', (3, 5)) -> ('NotTraversable', (3, 5))
+R3: ('Wall', (4, 3)) -> ('NotTraversable', (4, 3))
+R3: ('Wall', (5, 3)) -> ('NotTraversable', (5, 3))
+R4: ('Trap', (1, 3)) -> ('Dangerous', (1, 3))
+R4: ('Trap', (5, 2)) -> ('Dangerous', (5, 2))
+R6: ('Coin', (0, 1)) -> ('PositiveUtility', (0, 1))
+R6: ('Coin', (0, 5)) -> ('PositiveUtility', (0, 5))
+R6: ('Coin', (3, 0)) -> ('PositiveUtility', (3, 0))
+R7: ('Bonus', (3, 1)) -> ('PositiveUtility', (3, 1))
+R5: ('Dangerous', (1, 3)) -> ('Avoid', (1, 3))
+R5: ('Dangerous', (5, 2)) -> ('Avoid', (5, 2))
+GOAL=Exit (0, 2)
+SEARCH=A*, found=True, expanded=3, planned_cost=3, search_seconds=0.000042582
+PLAN=[(2, 3), (2, 2), (1, 2), (0, 2)]
+ACTION=LEFT
+REASON=Мэдэгдэж буй эрсдэлийн өртөг хамгийн бага замын эхний үйлдэл.
+AFTER ACTION=State(position=(2, 2), has_key=True, score=95, collected_coins=frozenset(), visited_cells=frozenset({(4, 4), (2, 3), (2, 4), (3, 4), (2, 2), (5, 4)}), consumed=frozenset({(3, 4)}))
+OBSERVED=((2, 2), '.')
+ACTUAL COST=1
+
+STEP 6
+PERCEPT state=State(position=(2, 2), has_key=True, score=95, collected_coins=frozenset(), visited_cells=frozenset({(4, 4), (2, 3), (2, 4), (3, 4), (2, 2), (5, 4)}), consumed=frozenset({(3, 4)}))
+Visible=[((0, 0), '.'), ((0, 1), 'C'), ((0, 2), 'E'), ((0, 3), '.'), ((0, 4), '.'), ((0, 5), 'C'), ((1, 0), '.'), ((1, 1), '.'), ((1, 2), '.'), ((1, 3), 'T'), ((1, 4), 'W'), ((1, 5), 'W'), ((2, 0), '.'), ((2, 1), '.'), ((2, 2), '.'), ((2, 3), '.'), ((2, 4), '.'), ((2, 5), 'W'), ((3, 0), 'C'), ((3, 1), 'B'), ((3, 2), '.'), ((3, 3), '.'), ((3, 4), '.'), ((3, 5), 'W'), ((4, 0), '.'), ((4, 1), '.'), ((4, 2), '.'), ((4, 3), 'W'), ((4, 4), '.'), ((4, 5), '.'), ((5, 0), '?'), ((5, 1), '.'), ((5, 2), 'T'), ((5, 3), 'W'), ((5, 4), '.'), ((5, 5), '.')]
+Observation=((2, 2), '.')
+NEW FACTS=[('At', (2, 2)), ('ObservedEmpty', (2, 2)), ('Visited', (2, 2))]
+RETRACTED FACTS=[('At', (2, 3)), ('Avoid', (1, 3)), ('Avoid', (5, 2)), ('Dangerous', (1, 3)), ('Dangerous', (5, 2)), ('Goal', 'Exit'), ('NotTraversable', (1, 4)), ('NotTraversable', (1, 5)), ('NotTraversable', (2, 5)), ('NotTraversable', (3, 5)), ('NotTraversable', (4, 3)), ('NotTraversable', (5, 3)), ('ObservedEmpty', (2, 3)), ('PositiveUtility', (0, 1)), ('PositiveUtility', (0, 5)), ('PositiveUtility', (3, 0)), ('PositiveUtility', (3, 1))]
+INFERENCE
+R2: ('HasKey', True) -> ('Goal', 'Exit')
+R3: ('Wall', (1, 4)) -> ('NotTraversable', (1, 4))
+R3: ('Wall', (1, 5)) -> ('NotTraversable', (1, 5))
+R3: ('Wall', (2, 5)) -> ('NotTraversable', (2, 5))
+R3: ('Wall', (3, 5)) -> ('NotTraversable', (3, 5))
+R3: ('Wall', (4, 3)) -> ('NotTraversable', (4, 3))
+R3: ('Wall', (5, 3)) -> ('NotTraversable', (5, 3))
+R4: ('Trap', (1, 3)) -> ('Dangerous', (1, 3))
+R4: ('Trap', (5, 2)) -> ('Dangerous', (5, 2))
+R6: ('Coin', (0, 1)) -> ('PositiveUtility', (0, 1))
+R6: ('Coin', (0, 5)) -> ('PositiveUtility', (0, 5))
+R6: ('Coin', (3, 0)) -> ('PositiveUtility', (3, 0))
+R7: ('Bonus', (3, 1)) -> ('PositiveUtility', (3, 1))
+R5: ('Dangerous', (1, 3)) -> ('Avoid', (1, 3))
+R5: ('Dangerous', (5, 2)) -> ('Avoid', (5, 2))
+GOAL=Exit (0, 2)
+SEARCH=A*, found=True, expanded=2, planned_cost=2, search_seconds=0.000031413
+PLAN=[(2, 2), (1, 2), (0, 2)]
+ACTION=UP
+REASON=Мэдэгдэж буй эрсдэлийн өртөг хамгийн бага замын эхний үйлдэл.
+AFTER ACTION=State(position=(1, 2), has_key=True, score=94, collected_coins=frozenset(), visited_cells=frozenset({(4, 4), (2, 3), (2, 4), (1, 2), (3, 4), (2, 2), (5, 4)}), consumed=frozenset({(3, 4)}))
+OBSERVED=((1, 2), '.')
+ACTUAL COST=1
+
+STEP 7
+PERCEPT state=State(position=(1, 2), has_key=True, score=94, collected_coins=frozenset(), visited_cells=frozenset({(4, 4), (2, 3), (2, 4), (1, 2), (3, 4), (2, 2), (5, 4)}), consumed=frozenset({(3, 4)}))
+Visible=[((0, 0), '.'), ((0, 1), 'C'), ((0, 2), 'E'), ((0, 3), '.'), ((0, 4), '.'), ((0, 5), 'C'), ((1, 0), '.'), ((1, 1), '.'), ((1, 2), '.'), ((1, 3), 'T'), ((1, 4), 'W'), ((1, 5), 'W'), ((2, 0), '.'), ((2, 1), '.'), ((2, 2), '.'), ((2, 3), '.'), ((2, 4), '.'), ((2, 5), 'W'), ((3, 0), 'C'), ((3, 1), 'B'), ((3, 2), '.'), ((3, 3), '.'), ((3, 4), '.'), ((3, 5), 'W'), ((4, 0), '.'), ((4, 1), '.'), ((4, 2), '.'), ((4, 3), 'W'), ((4, 4), '.'), ((4, 5), '.'), ((5, 0), '?'), ((5, 1), '.'), ((5, 2), 'T'), ((5, 3), 'W'), ((5, 4), '.'), ((5, 5), '.')]
+Observation=((1, 2), '.')
+NEW FACTS=[('At', (1, 2)), ('ObservedEmpty', (1, 2)), ('Visited', (1, 2))]
+RETRACTED FACTS=[('At', (2, 2)), ('Avoid', (1, 3)), ('Avoid', (5, 2)), ('Dangerous', (1, 3)), ('Dangerous', (5, 2)), ('Goal', 'Exit'), ('NotTraversable', (1, 4)), ('NotTraversable', (1, 5)), ('NotTraversable', (2, 5)), ('NotTraversable', (3, 5)), ('NotTraversable', (4, 3)), ('NotTraversable', (5, 3)), ('ObservedEmpty', (2, 2)), ('PositiveUtility', (0, 1)), ('PositiveUtility', (0, 5)), ('PositiveUtility', (3, 0)), ('PositiveUtility', (3, 1))]
+INFERENCE
+R2: ('HasKey', True) -> ('Goal', 'Exit')
+R3: ('Wall', (1, 4)) -> ('NotTraversable', (1, 4))
+R3: ('Wall', (1, 5)) -> ('NotTraversable', (1, 5))
+R3: ('Wall', (2, 5)) -> ('NotTraversable', (2, 5))
+R3: ('Wall', (3, 5)) -> ('NotTraversable', (3, 5))
+R3: ('Wall', (4, 3)) -> ('NotTraversable', (4, 3))
+R3: ('Wall', (5, 3)) -> ('NotTraversable', (5, 3))
+R4: ('Trap', (1, 3)) -> ('Dangerous', (1, 3))
+R4: ('Trap', (5, 2)) -> ('Dangerous', (5, 2))
+R6: ('Coin', (0, 1)) -> ('PositiveUtility', (0, 1))
+R6: ('Coin', (0, 5)) -> ('PositiveUtility', (0, 5))
+R6: ('Coin', (3, 0)) -> ('PositiveUtility', (3, 0))
+R7: ('Bonus', (3, 1)) -> ('PositiveUtility', (3, 1))
+R5: ('Dangerous', (1, 3)) -> ('Avoid', (1, 3))
+R5: ('Dangerous', (5, 2)) -> ('Avoid', (5, 2))
+GOAL=Exit (0, 2)
+SEARCH=A*, found=True, expanded=1, planned_cost=1, search_seconds=0.000020873
+PLAN=[(1, 2), (0, 2)]
+ACTION=UP
+REASON=Мэдэгдэж буй эрсдэлийн өртөг хамгийн бага замын эхний үйлдэл.
+AFTER ACTION=State(position=(0, 2), has_key=True, score=93, collected_coins=frozenset(), visited_cells=frozenset({(4, 4), (2, 3), (2, 4), (1, 2), (0, 2), (3, 4), (2, 2), (5, 4)}), consumed=frozenset({(3, 4)}))
+OBSERVED=((0, 2), 'E')
+ACTUAL COST=1
+FINAL PERCEPT={'state': State(position=(0, 2), has_key=True, score=93, collected_coins=frozenset(), visited_cells=frozenset({(4, 4), (2, 3), (2, 4), (1, 2), (0, 2), (3, 4), (2, 2), (5, 4)}), consumed=frozenset({(3, 4)})), 'visible': {(0, 0): '.', (0, 1): 'C', (0, 2): 'E', (0, 3): '.', (0, 4): '.', (0, 5): 'C', (1, 0): '.', (1, 1): '.', (1, 2): '.', (1, 3): 'T', (1, 4): 'W', (1, 5): 'W', (2, 0): '.', (2, 1): '.', (2, 2): '.', (2, 3): '.', (2, 4): '.', (2, 5): 'W', (3, 0): 'C', (3, 1): 'B', (3, 2): '.', (3, 3): '.', (3, 4): '.', (3, 5): 'W', (4, 0): '.', (4, 1): '.', (4, 2): '.', (4, 3): 'W', (4, 4): '.', (4, 5): '.', (5, 0): '?', (5, 1): '.', (5, 2): 'T', (5, 3): 'W', (5, 4): '.', (5, 5): '.'}, 'last_observation': ((0, 2), 'E')}
+NEW FACTS=[('At', (0, 2)), ('ObservedExit', (0, 2)), ('Visited', (0, 2))]
+RETRACTED FACTS=[('At', (1, 2)), ('Avoid', (1, 3)), ('Avoid', (5, 2)), ('Dangerous', (1, 3)), ('Dangerous', (5, 2)), ('Goal', 'Exit'), ('NotTraversable', (1, 4)), ('NotTraversable', (1, 5)), ('NotTraversable', (2, 5)), ('NotTraversable', (3, 5)), ('NotTraversable', (4, 3)), ('NotTraversable', (5, 3)), ('ObservedEmpty', (1, 2)), ('PositiveUtility', (0, 1)), ('PositiveUtility', (0, 5)), ('PositiveUtility', (3, 0)), ('PositiveUtility', (3, 1))]
+R2: ('HasKey', True) -> ('Goal', 'Exit')
+R3: ('Wall', (1, 4)) -> ('NotTraversable', (1, 4))
+R3: ('Wall', (1, 5)) -> ('NotTraversable', (1, 5))
+R3: ('Wall', (2, 5)) -> ('NotTraversable', (2, 5))
+R3: ('Wall', (3, 5)) -> ('NotTraversable', (3, 5))
+R3: ('Wall', (4, 3)) -> ('NotTraversable', (4, 3))
+R3: ('Wall', (5, 3)) -> ('NotTraversable', (5, 3))
+R4: ('Trap', (1, 3)) -> ('Dangerous', (1, 3))
+R4: ('Trap', (5, 2)) -> ('Dangerous', (5, 2))
+R6: ('Coin', (0, 1)) -> ('PositiveUtility', (0, 1))
+R6: ('Coin', (0, 5)) -> ('PositiveUtility', (0, 5))
+R6: ('Coin', (3, 0)) -> ('PositiveUtility', (3, 0))
+R7: ('Bonus', (3, 1)) -> ('PositiveUtility', (3, 1))
+R5: ('Dangerous', (1, 3)) -> ('Avoid', (1, 3))
+R5: ('Dangerous', (5, 2)) -> ('Avoid', (5, 2))
+RESULT={"algorithm": "A*", "path_length": 7, "expanded_nodes": 20, "total_path_cost": 7, "search_seconds": 0.00030257399953370623, "execution_seconds": 0.0062403019999237586, "goal_reached": true, "score": 93, "coins": 0, "traps": 0, "unique_cells": 8, "searches": 7, "status": "REACHED"}
