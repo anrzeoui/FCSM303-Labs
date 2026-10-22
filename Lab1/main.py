@@ -432,7 +432,7 @@ class Environment:
             f"Оюутны код       : {STUDENT_ID}\n"
             f"Seed             : {self.seed}\n"
             f"Алхам            : {agent.steps}\n"
-            f"Өвөрмөц нүд      : {len(agent.visited)}\n"
+            f"Явсан нүд        : {len(agent.visited)}\n"
             f"Давтан орсон тоо : {agent.revisits}\n"
             f"Зоос             : {agent.coins}\n"
             f"Хавх             : {agent.traps}\n"
@@ -440,7 +440,7 @@ class Environment:
             f"Түлхүүр олсон    : {key_status}\n"
             f"Эцсийн оноо      : {agent.performance}\n"
             f"Үр дүн           : {result}\n"
-            "Өвөрмөц нүдэнд эхлэх нүдийг оруулж тооцов."
+            "Явсан нүдэнд эхлэх нүдийг оруулж тооцов."
         )
         print(text)
         self.add_log(text)
